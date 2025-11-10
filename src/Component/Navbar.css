@@ -8,8 +8,8 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(10, 10, 10, 0.95);
-  backdrop-filter: blur(10px);
+ 
+
 }
 
 .portfolio-logo-wrapper {
@@ -31,8 +31,9 @@
 .portfolio-nav-link {
   color: #ffffff;
   text-decoration: none;
+    font-family: 'Oswald', sans-serif;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 200;
   letter-spacing: 1px;
   transition: color 0.3s ease;
   position: relative;

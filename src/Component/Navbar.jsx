@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-
+import logo from '../Assets/logo.svg'
 const Navbar = () => {
   return (
     <header className="portfolio-navigation-header">
       <div className="portfolio-logo-wrapper">
         <Link to="/">
-          <img src="/logo.png" alt="Habiba Elbanna Logo" className="portfolio-brand-logo" />
+          <img src={logo} />
         </Link>
       </div>
       
