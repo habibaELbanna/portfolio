@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import logo from '../Assets/logo.svg'
+import logo from '../Assets/imgs/logo.svg'
 const Navbar = () => {
   return (
     <header className="portfolio-navigation-header">
