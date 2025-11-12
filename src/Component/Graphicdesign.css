@@ -1,0 +1,103 @@
+.scroll-wrapper {
+  height: 300vh;
+  position: relative;
+}
+
+.horizontal-scroll-section {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+   margin-top: 60px;
+
+}
+
+.scroll-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+ 
+}
+
+.proof-card {
+  flex-shrink: 0;
+  height: 80vh;
+  border-radius: 10px;
+}
+
+.text-card {
+  min-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ 
+  color: white;
+  background: transparent;
+}
+ 
+     
+
+.text-card h1 {
+  font-size: 120px;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #204794;
+    color: #0E0E0E;
+       font-family: 'Banna', sans-serif;
+           margin-top: 330px;
+}
+
+
+
+.image-card {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.image-card > img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+  transform: scale(0);
+  transition: transform 0.4s ease;
+}
+
+.image-card:hover > img {
+  filter: brightness(0.4);
+  transform: scale(1.05);
+}
+
+.image-card:hover .image-overlay {
+  opacity: 1;
+}
+
+.image-card:hover .logo {
+  transform: scale(1);
+}
