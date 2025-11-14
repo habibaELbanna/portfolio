@@ -1,0 +1,97 @@
+.softwaruse {
+  font-family: "Oswald", sans-serif;
+  color: #fff;
+}
+
+.aboutme {
+  display: flex;
+  margin-top: 60px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.aboutlogo {
+  width: 383px;
+  margin-left: 60px;
+}
+
+.info2 {
+  margin-right: 100px;
+  margin-left: 60px;
+  margin-bottom: 60px;
+  font-family: "Oswald", sans-serif;
+  color: #fff;
+  font-weight: 300;
+}
+
+.info2ar {
+  margin-right: 100px;
+  margin-left: 60px;
+  margin-bottom: 60px;
+  direction: rtl;
+}
+
+.edu {
+  font-family: "Oswald", sans-serif;
+  color: #204794;
+  margin-left: 60px;
+}
+
+.school {
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+  margin-left: 60px;
+  color: #fff;
+}
+
+.expi {
+  display: flex;
+  gap: 20px;
+}
+
+.infoaboutme {
+  margin-left: 80px;
+  margin-top: 80px;
+}
+
+.infoh11 {
+  margin-right: 100px;
+  font-family: "Oswald", sans-serif;
+  color: #204794;
+}
+
+.image-container {
+  padding: 40px;
+  text-align: center;
+}
+
+.twirling-image {
+  width: 170px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.6s ease;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+  transform-style: preserve-3d;
+}
+
+.twirling-image:hover {
+  animation: twirl3d 1.2s ease-in-out infinite;
+}
+
+@keyframes twirl3d {
+  0% {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+  25% {
+    transform: rotateY(180deg) rotateX(10deg);
+  }
+  50% {
+    transform: rotateY(360deg) rotateX(0deg);
+  }
+  75% {
+    transform: rotateY(180deg) rotateX(-10deg);
+  }
+  100% {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+}

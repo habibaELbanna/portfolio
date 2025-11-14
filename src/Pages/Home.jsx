@@ -6,6 +6,7 @@ import Graphicdesign from '../Component/Graphicdesign';
 import Casestudy from '../Component/Casestudy';
 import Discription from '../Component/Discription';
 import CodingSection from '../Component/CodingSection';
+import AboutMe from '../Component/AboutMe';
 
 
 
@@ -18,6 +19,7 @@ const Home = () => {
       <Discription />
      <Casestudy />
 <CodingSection />
+<AboutMe />
     </div>
   );
 };
