@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
+import DoItProject from './Component/Doitproject';
+
 
 const Routing = () => {
   return (
@@ -8,7 +10,7 @@ const Routing = () => {
     
       <Routes>
         <Route path="/" element={<Home />} />
-     
+     <Route path="/project/doit" element={<DoItProject />} />
       </Routes>
    </BrowserRouter>
   );

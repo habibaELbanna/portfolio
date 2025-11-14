@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import './Casestudy.css';
 import doit from '../Assets/imgs/casestudy/logodoit.svg'
 import vortex from '../Assets/imgs/casestudy/vortexlogo.svg'
@@ -22,77 +23,77 @@ const Casestudy = () => {
       title: "Do It",
       category: "branding",
       image: doit,
-      link: "#"
+      link: "/project/doit"
     },
     {
       id: 1,
       title: "Kemet",
       category: "branding",
       image: kemet,
-      link: "#"
+      link: "/project/1"
     },
     {
       id: 2,
       title: "Phone Design",
       category: "product design",
       image: phone,
-      link: "#"
+      link: "/project/2"
     },
     {
       id: 3,
       title: "Cosmo",
       category: "branding",
       image: cosmo,
-      link: "#"
+      link: "/project/3"
     },
     {
       id: 4,
       title: "BIO",
       category: "branding",
       image: bio,
-      link: "#"
+      link: "/project/4"
     },
     {
       id: 5,
       title: "Perfume",
       category: "product design",
       image: perfume,
-      link: "#"
+      link: "/project/5"
     },
     {
       id: 6,
       title: "Vortex",
       category: "branding",
       image: vortex,
-      link: "#"
+      link: "/project/6"
     },
     {
       id: 7,
       title: "Real Estate",
       category: "web design",
       image: real,
-      link: "#"
+      link: "/project/7"
     },
     {
       id: 8,
       title: "Giza Zoo",
       category: "web design",
       video: giza,
-      link: "#"
+      link: "/project/8"
     },
     {
       id: 9,
       title: "Sofra",
       category: "branding",
       image: sofra,
-      link: "#"
+      link: "/project/9"
     },
     {
       id: 10,
       title: "Pink Project",
       category: "design",
       image: pink,
-      link: "#"
+      link: "/project/10"
     }
   ];
 
@@ -229,34 +230,35 @@ const Casestudy = () => {
         animate="visible"
       >
         {projects.map((project, index) => (
-          <motion.a
+          <motion.div
             key={project.id}
-            href={project.link}
-            ref={addToRefs}
             className={`bento-item ${getCardClassName(index)}`}
             variants={itemVariants}
             whileHover={hoverVariants}
             onMouseEnter={() => handleWorkHover(project.id)}
+            ref={addToRefs}
           >
-            <div className="card-image-full">
-              {project.video ? (
-                <video
-                  className='vid'
-                  src={project.video}
-                  autoPlay
-                  loop
-                  playsInline
-                  muted
-                />
-              ) : (
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="card-img"
-                />
-              )}
-            </div>
-          </motion.a>
+            <Link to={project.link} style={{ textDecoration: 'none', display: 'block', width: '100%', height: '100%' }}>
+              <div className="card-image-full">
+                {project.video ? (
+                  <video
+                    className='vid'
+                    src={project.video}
+                    autoPlay
+                    loop
+                    playsInline
+                    muted
+                  />
+                ) : (
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="card-img"
+                  />
+                )}
+              </div>
+            </Link>
+          </motion.div>
         ))}
       </motion.div>
     </div>
