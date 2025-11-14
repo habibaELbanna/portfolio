@@ -8,6 +8,10 @@ import giza from '../Assets/vid/gizazoo.mp4'
 import real from '../Assets/imgs/casestudy/realestate.png'
 import phone from '../Assets/imgs/casestudy/phone.png'
 import perfume from '../Assets/imgs/casestudy/perfume.png'
+import bio from '../Assets/imgs/casestudy/BIO.png'
+import sofra from '../Assets/imgs/casestudy/sofra.png'
+import kemet from '../Assets/imgs/casestudy/kemet.png'
+import pink from '../Assets/imgs/casestudy/pinnk.png'
 const Casestudy = () => {
   const containerRef = useRef(null);
   const gridRef = useRef(null);
@@ -143,7 +147,7 @@ const Casestudy = () => {
         >
           <div className="card-image-full">
             <img 
-              src={vortex} 
+              src={kemet} 
               alt="Image 2"
               className="card-img"
             />
@@ -188,7 +192,7 @@ const Casestudy = () => {
         >
           <div className="card-image-full">
             <img 
-              src={perfume} 
+          src={bio} 
               alt="Image 5a"
               className="card-img"
             />
@@ -218,7 +222,7 @@ const Casestudy = () => {
         >
           <div className="card-image-full">
             <img 
-              src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=1000&h=400&fit=crop" 
+            src={vortex} 
               alt="Image 6"
               className="card-img"
             />
@@ -265,7 +269,7 @@ const Casestudy = () => {
         >
           <div className="card-image-full">
             <img 
-              src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=600&fit=crop" 
+              src={sofra}
               alt="Image 9"
               className="card-img"
             />
@@ -280,7 +284,7 @@ const Casestudy = () => {
         >
           <div className="card-image-full">
             <img 
-              src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&h=600&fit=crop" 
+             src={pink}
               alt="Image 10"
               className="card-img"
             />

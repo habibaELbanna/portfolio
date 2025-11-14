@@ -5,7 +5,9 @@ import Hero from '../Component/Hero';
 import Graphicdesign from '../Component/Graphicdesign';
 import Casestudy from '../Component/Casestudy';
 import Discription from '../Component/Discription';
-import Threed from '../Component/Threed';
+import CodingSection from '../Component/CodingSection';
+
+
 
 const Home = () => {
   return (
@@ -15,7 +17,7 @@ const Home = () => {
      <Graphicdesign />
       <Discription />
      <Casestudy />
-     <Threed />
+<CodingSection />
     </div>
   );
 };
