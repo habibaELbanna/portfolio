@@ -9,6 +9,7 @@ import CodingSection from '../Component/CodingSection';
 import AboutMe from '../Component/AboutMe';
 import Footer from '../Component/Footer';
 import FloatingButton from '../Component/Floatingbutton';
+import Contact from '../Component/Contact';
 
 
 
@@ -22,6 +23,7 @@ const Home = () => {
      <Casestudy />
 <CodingSection />
 <AboutMe />
+<Contact />
 <FloatingButton />
 <Footer />
 

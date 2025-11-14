@@ -1,0 +1,153 @@
+.contact-section {
+  padding: 80px 0;
+}
+
+.elbanna-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.elbanna-main-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.elbanna-sub-title {
+  font-size: 18px;
+  color: #888;
+}
+
+.elbanna-info-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 40px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.elbanna-box {
+  padding: 20px;
+  border: 1px solid #204794;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.elbanna-box h3 {
+  font-size: 14px;
+  color: #204794;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Oswald", sans-serif;
+}
+
+.elbanna-box a,
+.elbanna-box p {
+  font-size: 16px;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Oswald", sans-serif;
+}
+
+.elbanna-box a:hover {
+  color: #204794;
+}
+
+.elbanna-input-wrapper {
+  margin-bottom: 20px;
+}
+
+.elbanna-label {
+  display: block;
+  font-size: 13px;
+  color: #ffffff;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: "Oswald", sans-serif;
+}
+
+.elbanna-input,
+.elbanna-textarea {
+  width: 100%;
+  padding: 12px 15px;
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: "Oswald", sans-serif;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.elbanna-input:focus,
+.elbanna-textarea:focus {
+  outline: none;
+  border-color: #204794;
+}
+
+.elbanna-input::placeholder,
+.elbanna-textarea::placeholder {
+  color: #555;
+}
+
+.elbanna-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.elbanna-send-button {
+  width: 100%;
+  padding: 14px;
+  background: #204794;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Oswald", sans-serif;
+}
+
+.elbanna-send-button:hover {
+  background: #1a3a7a;
+}
+
+.bigcontener {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: 60px;
+  border-radius: 6px;
+  border: 1px solid #204794;
+  padding: 40px;
+}
+
+@media (max-width: 900px) {
+  .elbanna-main-title {
+    font-size: 32px;
+  }
+
+  .bigcontener,
+  .elbanna-info-side {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 30px 20px;
+  }
+
+  .contact-section {
+    padding: 40px 0;
+  }
+}
