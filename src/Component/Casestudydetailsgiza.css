@@ -1,0 +1,131 @@
+/* Main Container */
+.split-layout-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Left Side - Scrolling Gallery */
+.scrolling-gallery-section {
+  flex: 1;
+  padding: 40px;
+}
+
+/* Gallery Grid */
+.image-grid-gallery {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(200px, auto);
+}
+
+.gallery-box-item {
+  border: 2px solid #4a9eff;
+  background-color: #0f0f0f;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  min-height: 250px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.gallery-box-item:nth-child(1) {
+  grid-column: 1 / -1;
+  min-height: 400px;
+}
+
+.gallery-box-item:nth-child(2) {
+  min-height: 350px;
+}
+
+.gallery-box-item:nth-child(3) {
+  min-height: 350px;
+}
+
+.gallery-box-item:nth-child(4) {
+  min-height: 250px;
+}
+
+.gallery-box-item:nth-child(5) {
+  min-height: 250px;
+}
+
+.gallery-box-item:nth-child(6) {
+  grid-column: 1 / -1;
+  min-height: 400px;
+}
+
+.gallery-box-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(74, 158, 255, 0.5);
+}
+
+/* Right Side - Fixed Content */
+.fixed-content-section {
+  flex: 1;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  
+}
+
+.text-content-wrapper h1 {
+  font-size: 64px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  line-height: 1.1;
+}
+
+.text-content-wrapper p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #cccccc;
+  margin-bottom: 30px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .split-layout-container {
+    flex-direction: column;
+  }
+
+  .fixed-content-section {
+    position: relative;
+    height: auto;
+  }
+
+  .text-content-wrapper h1 {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .scrolling-gallery-section {
+    padding: 20px;
+  }
+
+  .fixed-content-section {
+    padding: 40px 20px;
+  }
+
+  .image-grid-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-box-item:nth-child(1),
+  .gallery-box-item:nth-child(6) {
+    grid-column: 1;
+  }
+
+  .text-content-wrapper h1 {
+    font-size: 36px;
+  }
+
+  .text-content-wrapper p {
+    font-size: 16px;
+  }
+}

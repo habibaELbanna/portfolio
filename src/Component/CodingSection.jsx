@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './CodingSection.css';
 import giza from '../Assets/vid/gizazoo.mp4'
 import harry from '../Assets/vid/harry.mp4'
@@ -6,6 +7,7 @@ import jewels from '../Assets/imgs/coding/jewels.png'
 import kemet from '../Assets/imgs/casestudy/kemet.png'
 import aw from '../Assets/imgs/coding/awearness.png'
 import re from '../Assets/imgs/coding/repair.png'
+
 const CodingSection = () => {
     const [activeWork, setActiveWork] = useState(0);
 
@@ -15,13 +17,13 @@ const CodingSection = () => {
             title: "Giza Zoo",
             category: "ux/ui/ development",
             video: giza,
-            link: "coding_internal_page.html"
+            link: "/project/giza-zoo"
         },
         {
             id: 1,
             title: "harry potter inspired story website",
             category: "ux/ui/ development",
-           video: harry,
+            video: harry,
             link: "#"
         },
         {
@@ -35,7 +37,7 @@ const CodingSection = () => {
             id: 3,
             title: "Egyptian history KEMET",
             category: "ux/ui/ development",
-            image:kemet,
+            image: kemet,
             link: "#"
         },
         {
@@ -52,7 +54,6 @@ const CodingSection = () => {
             image: re,
             link: "#"
         }
-   
     ];
 
     const handleWorkHover = (workId) => {
@@ -93,16 +94,29 @@ const CodingSection = () => {
                     <div className="works-listing">
                         <h1 className="proj">PROJECTS</h1>
                         {projects.map((project) => (
-                            <a href={project.link} key={project.id}>
-                                <div
-                                    className="work-entry"
-                                    data-work={project.id}
-                                    onMouseEnter={() => handleWorkHover(project.id)}
-                                >
-                                    <span className="work-title">{project.title}</span>
-                                    <span className="work-category">{project.category}</span>
-                                </div>
-                            </a>
+                            project.link === "#" ? (
+                                <a href={project.link} key={project.id}>
+                                    <div
+                                        className="work-entry"
+                                        data-work={project.id}
+                                        onMouseEnter={() => handleWorkHover(project.id)}
+                                    >
+                                        <span className="work-title">{project.title}</span>
+                                        <span className="work-category">{project.category}</span>
+                                    </div>
+                                </a>
+                            ) : (
+                                <Link to={project.link} key={project.id}>
+                                    <div
+                                        className="work-entry"
+                                        data-work={project.id}
+                                        onMouseEnter={() => handleWorkHover(project.id)}
+                                    >
+                                        <span className="work-title">{project.title}</span>
+                                        <span className="work-category">{project.category}</span>
+                                    </div>
+                                </Link>
+                            )
                         ))}
                     </div>
                 </div>
