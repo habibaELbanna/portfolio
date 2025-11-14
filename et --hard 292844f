@@ -1,0 +1,12 @@
+[33mc435b12[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{0}: reset: moving to c435b12
+[33m292844f[m HEAD@{1}: filter-branch: rewrite
+[33m2745352[m HEAD@{2}: commit: coding section
+[33m29fcaeb[m HEAD@{3}: commit: Remove robot.glb from Git history
+[33mb4ca07a[m HEAD@{4}: commit: Optimize robot.glb with Draco compression
+[33me5a7255[m HEAD@{5}: commit: coding section
+[33mc435b12[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{6}: commit: case study section
+[33m7222e83[m HEAD@{7}: commit: graphic design section
+[33m8fd6fdb[m HEAD@{8}: commit: hero section done
+[33m4fa9d67[m HEAD@{9}: commit: nav and background done
+[33m130a593[m HEAD@{10}: commit: started nav
+[33m4e4f39b[m HEAD@{11}: commit (initial): Initialize project using Create React App
