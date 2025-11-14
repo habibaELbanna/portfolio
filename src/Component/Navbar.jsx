@@ -1,26 +1,86 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 import './Navbar.css';
-import logo from '../Assets/imgs/logo.svg'
+import logo from '../Assets/imgs/logo.svg';
+
 const Navbar = () => {
   return (
     <header className="portfolio-navigation-header">
-      <div className="portfolio-logo-wrapper">
-        <Link to="/">
-          <img src={logo} />
-        </Link>
-      </div>
       
+      <div className="portfolio-logo-wrapper">
+        <ScrollLink to="home" smooth={true} duration={600}>
+          <img src={logo} alt="logo" style={{ cursor: "pointer" }} />
+        </ScrollLink>
+      </div>
+
       <nav className="portfolio-main-navigation">
-        <Link to="/" className="portfolio-nav-link">HOME</Link>
-        <Link to="/blog" className="portfolio-nav-link">BLOG</Link>
-        <Link to="/contact" className="portfolio-nav-link">CONTACT</Link>
-        <Link to="/about" className="portfolio-nav-link">ABOUT ME</Link>
-        <Link to="/webapp" className="portfolio-nav-link">WEB/APP</Link>
-        <Link to="/graphic-design" className="portfolio-nav-link">GRAPHIC DESIGN</Link>
-        <Link to="/3d-design" className="portfolio-nav-link">3D DESIGN</Link>
-        <Link to="/coding" className="portfolio-nav-link">CODING</Link>
+        
+        <ScrollLink 
+          to="home" 
+          smooth={true} 
+          duration={600}
+          className="portfolio-nav-link"
+        >
+          HOME
+        </ScrollLink>
+
+        <ScrollLink 
+          to="graphicdesign" 
+          smooth={true} 
+          duration={600}
+          className="portfolio-nav-link"
+        >
+          GRAPHIC DESIGN
+        </ScrollLink>
+
+        <ScrollLink 
+          to="about" 
+          smooth={true} 
+          duration={600}
+          className="portfolio-nav-link"
+        >
+          ABOUT
+        </ScrollLink>
+
+        {/* FIXED HERE ↓↓↓ */}
+        <ScrollLink 
+          to="webapp" 
+          smooth={true} 
+          duration={600}
+          className="portfolio-nav-link"
+        >
+          WEB / APP
+        </ScrollLink>
+
+        <ScrollLink 
+          to="coding" 
+          smooth={true} 
+          duration={600}
+          className="portfolio-nav-link"
+        >
+          CODING
+        </ScrollLink>
+
+        <ScrollLink 
+          to="aboutme" 
+          smooth={true} 
+          duration={600}
+          className="portfolio-nav-link"
+        >
+          ABOUT ME
+        </ScrollLink>
+
+        <ScrollLink 
+          to="contact" 
+          smooth={true} 
+          duration={600}
+          className="portfolio-nav-link"
+        >
+          CONTACT
+        </ScrollLink>
+
       </nav>
+
     </header>
   );
 };
