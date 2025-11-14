@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import './Casestudy.css';
 import doit from '../Assets/imgs/casestudy/logodoit.svg'
@@ -12,7 +12,94 @@ import bio from '../Assets/imgs/casestudy/BIO.png'
 import sofra from '../Assets/imgs/casestudy/sofra.png'
 import kemet from '../Assets/imgs/casestudy/kemet.png'
 import pink from '../Assets/imgs/casestudy/pinnk.png'
+
 const Casestudy = () => {
+  const [activeWork, setActiveWork] = useState(0);
+
+  const projects = [
+    {
+      id: 0,
+      title: "Do It",
+      category: "branding",
+      image: doit,
+      link: "#"
+    },
+    {
+      id: 1,
+      title: "Kemet",
+      category: "branding",
+      image: kemet,
+      link: "#"
+    },
+    {
+      id: 2,
+      title: "Phone Design",
+      category: "product design",
+      image: phone,
+      link: "#"
+    },
+    {
+      id: 3,
+      title: "Cosmo",
+      category: "branding",
+      image: cosmo,
+      link: "#"
+    },
+    {
+      id: 4,
+      title: "BIO",
+      category: "branding",
+      image: bio,
+      link: "#"
+    },
+    {
+      id: 5,
+      title: "Perfume",
+      category: "product design",
+      image: perfume,
+      link: "#"
+    },
+    {
+      id: 6,
+      title: "Vortex",
+      category: "branding",
+      image: vortex,
+      link: "#"
+    },
+    {
+      id: 7,
+      title: "Real Estate",
+      category: "web design",
+      image: real,
+      link: "#"
+    },
+    {
+      id: 8,
+      title: "Giza Zoo",
+      category: "web design",
+      video: giza,
+      link: "#"
+    },
+    {
+      id: 9,
+      title: "Sofra",
+      category: "branding",
+      image: sofra,
+      link: "#"
+    },
+    {
+      id: 10,
+      title: "Pink Project",
+      category: "design",
+      image: pink,
+      link: "#"
+    }
+  ];
+
+  const handleWorkHover = (workId) => {
+    setActiveWork(workId);
+  };
+
   const containerRef = useRef(null);
   const gridRef = useRef(null);
   const cardsRef = useRef([]);
@@ -112,6 +199,23 @@ const Casestudy = () => {
     }
   };
 
+  const getCardClassName = (index) => {
+    const cardClasses = [
+      'card-1',
+      'card-2', 
+      'card-3',
+      'card-4',
+      'card-5a',
+      'card-5b',
+      'card-6',
+      'card-7',
+      'card-8',
+      'card-9',
+      'card-10'
+    ];
+    return cardClasses[index] || `card-${index + 1}`;
+  };
+
   return (
     <div ref={containerRef} className="bento-container">
       <div ref={overlayRef} className="bento-overlay"></div>
@@ -124,173 +228,36 @@ const Casestudy = () => {
         initial="hidden"
         animate="visible"
       >
-        <motion.div 
-          ref={addToRefs}
-          className="bento-item card-1"
-          variants={itemVariants}
-          whileHover={hoverVariants}
-        >
-          <div className="card-image-full">
-            <img 
-              src={doit} 
-              alt="Image 1"
-              className="card-img"
-            />
-          </div>
-        </motion.div>
-
-        <motion.div 
-          ref={addToRefs}
-          className="bento-item card-2"
-          variants={itemVariants}
-          whileHover={hoverVariants}
-        >
-          <div className="card-image-full">
-            <img 
-              src={kemet} 
-              alt="Image 2"
-              className="card-img"
-            />
-          </div>
-        </motion.div>
-
-        <motion.div 
-          ref={addToRefs}
-          className="bento-item card-3"
-          variants={itemVariants}
-          whileHover={hoverVariants}
-        >
-          <div className="card-image-full">
-            <img 
-             src={phone} 
-              alt="Image 3"
-              className="card-img"
-            />
-          </div>
-        </motion.div>
-
-        <motion.div 
-          ref={addToRefs}
-          className="bento-item card-4"
-          variants={itemVariants}
-          whileHover={hoverVariants}
-        >
-          <div className="card-image-full">
-            <img 
-             src={cosmo} 
-              alt="Image 4"
-              className="card-img"
-            />
-          </div>
-        </motion.div>
-
-        <motion.div 
-          ref={addToRefs}
-          className="bento-item card-5a"
-          variants={itemVariants}
-          whileHover={hoverVariants}
-        >
-          <div className="card-image-full">
-            <img 
-          src={bio} 
-              alt="Image 5a"
-              className="card-img"
-            />
-          </div>
-        </motion.div>
-
-        <motion.div 
-          ref={addToRefs}
-          className="bento-item card-5b"
-          variants={itemVariants}
-          whileHover={hoverVariants}
-        >
-          <div className="card-image-full">
-            <img 
-                src={perfume} 
-              alt="Image 5b"
-              className="card-img"
-            />
-          </div>
-        </motion.div>
-
-        <motion.div 
-          ref={addToRefs}
-          className="bento-item card-6"
-          variants={itemVariants}
-          whileHover={hoverVariants}
-        >
-          <div className="card-image-full">
-            <img 
-            src={vortex} 
-              alt="Image 6"
-              className="card-img"
-            />
-          </div>
-        </motion.div>
-
-        <motion.div 
-          ref={addToRefs}
-          className="bento-item card-7"
-          variants={itemVariants}
-          whileHover={hoverVariants}
-        >
-          <div className="card-image-full">
-            <img 
-              src={real} 
-              alt="Image 7"
-              className="card-img"
-            />
-          </div>
-        </motion.div>
-
-        <motion.div 
-          ref={addToRefs}
-          className="bento-item card-8"
-          variants={itemVariants}
-          whileHover={hoverVariants}
-        >
-          <div className="card-image-full">
-           <video  className='vid'
-      src={giza}
-   autoPlay
-  loop
-    playsInline
-  muted
-    />
-          </div>
-        </motion.div>
-
-        <motion.div 
-          ref={addToRefs}
-          className="bento-item card-9"
-          variants={itemVariants}
-          whileHover={hoverVariants}
-        >
-          <div className="card-image-full">
-            <img 
-              src={sofra}
-              alt="Image 9"
-              className="card-img"
-            />
-          </div>
-        </motion.div>
-
-        <motion.div 
-          ref={addToRefs}
-          className="bento-item card-10"
-          variants={itemVariants}
-          whileHover={hoverVariants}
-        >
-          <div className="card-image-full">
-            <img 
-             src={pink}
-              alt="Image 10"
-              className="card-img"
-            />
-          </div>
-        </motion.div>
-
+        {projects.map((project, index) => (
+          <motion.a
+            key={project.id}
+            href={project.link}
+            ref={addToRefs}
+            className={`bento-item ${getCardClassName(index)}`}
+            variants={itemVariants}
+            whileHover={hoverVariants}
+            onMouseEnter={() => handleWorkHover(project.id)}
+          >
+            <div className="card-image-full">
+              {project.video ? (
+                <video
+                  className='vid'
+                  src={project.video}
+                  autoPlay
+                  loop
+                  playsInline
+                  muted
+                />
+              ) : (
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="card-img"
+                />
+              )}
+            </div>
+          </motion.a>
+        ))}
       </motion.div>
     </div>
   );
