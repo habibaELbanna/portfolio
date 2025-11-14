@@ -23,7 +23,7 @@ const AboutMe = () => {
           I enjoy exploring different creative directions and adapting to various scopes — whether it's crafting user journeys, designing interfaces, or shaping brand experiences, I aim to create work that feels thoughtful, intuitive, and a little bit unexpected.
         </h2>
 
-        <h1 className="edu">EDUCATION</h1>
+        <h1 className="eduu">EDUCATION</h1>
         <h2 className="school">
           <span style={{ color: 'rgb(255, 255, 255)', fontWeight: 600 }}>-School<br /></span>
           Lycée La Liberté Héliopolis

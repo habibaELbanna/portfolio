@@ -7,6 +7,8 @@ import Casestudy from '../Component/Casestudy';
 import Discription from '../Component/Discription';
 import CodingSection from '../Component/CodingSection';
 import AboutMe from '../Component/AboutMe';
+import Footer from '../Component/Footer';
+import FloatingButton from '../Component/Floatingbutton';
 
 
 
@@ -20,6 +22,9 @@ const Home = () => {
      <Casestudy />
 <CodingSection />
 <AboutMe />
+<FloatingButton />
+<Footer />
+
     </div>
   );
 };

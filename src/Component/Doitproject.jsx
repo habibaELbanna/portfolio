@@ -20,6 +20,8 @@ import logo6 from '../Assets/imgs/doit/6.svg';
 import logo7 from '../Assets/imgs/doit/7.svg';
 import logo8 from '../Assets/imgs/doit/8.svg';
 import Nav from './Navbar';
+import Footer from './Footer';
+import FloatingButton from './Floatingbutton';
 
 const DoItProject = () => {
     
@@ -164,6 +166,8 @@ const DoItProject = () => {
         </div>
       </div>
     </div>
+    <FloatingButton />
+    <Footer />
     </>
   );
 };
