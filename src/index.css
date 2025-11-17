@@ -4,16 +4,16 @@
 
 
 
+@font-face {
+  font-family: 'banna';
+ src: url('./Assets/font/Banna-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   font-family: 'Oswald', sans-serif;
   background-color: #0e0e0e;
   background-image: url(Assets/imgs/back.png);
   background-size: contain;
-}
-@font-face {
-  font-family: 'YourFontName';
- src: url('./Assets/font/Banna-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
 }
 
