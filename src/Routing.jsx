@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import DoItProject from './Component/Doitproject';
 import CaseStudyDetailsGiza from './Component/Casestudydetailsgiza';
+import AsapProject from './Component/AsapProject';
 
 
 const Routing = () => {
@@ -13,6 +14,7 @@ const Routing = () => {
         <Route path="/" element={<Home />} />
               <Route path="/project/giza-zoo" element={<CaseStudyDetailsGiza />} />
      <Route path="/project/doit" element={<DoItProject />} />
+     <Route path="/asap-project" element={<AsapProject />} />
       </Routes>
    </BrowserRouter>
   );

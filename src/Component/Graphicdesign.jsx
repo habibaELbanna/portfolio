@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Graphicdesign.css';
 import asap from '../Assets/imgs/graphicdesign/posters/asap.jpg'
 import hamed from '../Assets/imgs/graphicdesign/posters/hamed.jpg'
@@ -10,6 +11,51 @@ import ogre from '../Assets/imgs/graphicdesign/ogre_blast/header.jpg'
 const Graphicdesign = () => {
   const scrollContainerRef = useRef(null);
   const wrapperRef = useRef(null);
+
+  const projects = [
+    {
+      id: 0,
+      title: "ASAP",
+      category: "poster design",
+      image: asap,
+      link: "/asap-project"
+    },
+    {
+      id: 1,
+      title: "Hamed",
+      category: "poster design",
+      image: hamed,
+      link: "/hamed-project"
+    },
+    {
+      id: 2,
+      title: "Leg Illustration",
+      category: "illustration",
+      image: leg,
+      link: "/leg-project"
+    },
+    {
+      id: 3,
+      title: "Ogre Blast",
+      category: "graphic design",
+      image: ogre,
+      link: "/ogre-project"
+    },
+    {
+      id: 4,
+      title: "Sonder",
+      category: "graphic design",
+      image: sonder,
+      link: "/sonder-project"
+    },
+    {
+      id: 5,
+      title: "Shadow Edge",
+      category: "graphic design",
+      image: shadow,
+      link: "/shadow-project"
+    }
+  ];
 
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
@@ -54,71 +100,23 @@ const Graphicdesign = () => {
       <div className="horizontal-scroll-section">
         <div className="scroll-container" ref={scrollContainerRef}>
           <div className="proof-card text-card">
-            <h1>THE<br></br> Graphic<br></br> design</h1>
-         
+            <h1>THE<br /> Graphic<br /> design</h1>
           </div>
 
-          <div className="proof-card image-card">
-            <img src={asap} alt="Work 11" />
-            <div className="image-overlay">
-    
-            </div>
-          </div>
-
-          <div className="proof-card image-card">
-            <img src={hamed} alt="Work 1" />
-            <div className="image-overlay">
-   
-            </div>
-          </div>
-
- <div className="proof-card image-card">
-            <img src={leg} alt="Work 1" />
-            <div className="image-overlay">
-   
-            </div>
-          </div>
-
-
- <div className="proof-card image-card">
-            <img src={ogre} alt="Work 1" />
-            <div className="image-overlay">
-   
-            </div>
-          </div>
-
-
-
-
- <div className="proof-card image-card">
-            <img src={sonder} alt="Work 1" />
-            <div className="image-overlay">
-   
-            </div>
-          </div>
-
-
-
-
-
-
-
- <div className="proof-card image-card">
-            <img src={shadow} alt="Work 1" />
-            <div className="image-overlay">
-   
-            </div>
-          </div>
-
-
-
-
-
-
-
-
-
- </div>
+          {projects.map((project) => (
+            <Link 
+              key={project.id} 
+              to={project.link}
+              style={{ textDecoration: 'none' }}
+            >
+              <div className="proof-card image-card">
+                <img src={project.image} alt={project.title} />
+                <div className="image-overlay">
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

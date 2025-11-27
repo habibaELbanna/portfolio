@@ -11,22 +11,43 @@ import Footer from '../Component/Footer';
 import FloatingButton from '../Component/Floatingbutton';
 import Contact from '../Component/Contact';
 
-
+import { Element } from 'react-scroll';
 
 const Home = () => {
   return (
     <div className="portfolio-home-container">
       <Navbar />
-     <Hero />
-     <Graphicdesign />
-      <Discription />
-     <Casestudy />
-<CodingSection />
-<AboutMe />
-<Contact />
-<FloatingButton />
-<Footer />
 
+      <Element name="home">
+        <Hero />
+      </Element>
+
+      <Element name="graphicdesign">
+        <Graphicdesign />
+      </Element>
+
+      <Element name="about">
+        <Discription />
+      </Element>
+
+      <Element name="webapp">
+        <Casestudy />
+      </Element>
+
+      <Element name="coding">
+        <CodingSection />
+      </Element>
+
+      <Element name="aboutme">
+        <AboutMe />
+      </Element>
+
+      <Element name="contact">
+        <Contact />
+      </Element>
+
+      <FloatingButton />
+      <Footer />
     </div>
   );
 };
