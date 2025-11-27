@@ -4,6 +4,7 @@ import Home from './Pages/Home';
 import DoItProject from './Component/Doitproject';
 import CaseStudyDetailsGiza from './Component/Casestudydetailsgiza';
 import AsapProject from './Component/AsapProject';
+import HamedProject from './Component/HamedProject';
 
 
 const Routing = () => {
@@ -15,6 +16,7 @@ const Routing = () => {
               <Route path="/project/giza-zoo" element={<CaseStudyDetailsGiza />} />
      <Route path="/project/doit" element={<DoItProject />} />
      <Route path="/asap-project" element={<AsapProject />} />
+          <Route path="/Hamed-project" element={<HamedProject />} />
       </Routes>
    </BrowserRouter>
   );
