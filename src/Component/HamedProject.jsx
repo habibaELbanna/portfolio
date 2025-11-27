@@ -14,18 +14,15 @@ const HamedProject = () => {
         
         <div className="project-content">
           <div className="project-info">
-            <h1 className="project-title">A$AP Rocky Concert Poster — Concept Design</h1>
+            <h1 className="project-title">Hamed Gohar Geometric Portrait — Illustrator Vector Art</h1>
             
             <p className="project-description">
-            This project is a conceptual poster created for an imagined A$AP Rocky concert announcement, designed entirely in Adobe Illustrator. The aim was to capture the artist’s bold, experimental identity through striking visuals, expressive typography, and a strong urban aesthetic.
-            </p>
+         This project is a geometric vector portrait created in Adobe Illustrator, honoring the Egyptian marine science pioneer Dr. Hamed Gohar. The artwork was constructed entirely using triangular shapes, forming a low-poly style that blends modern digital illustration techniques with a tribute to a national scientific icon.  </p>
 
             <p className="project-description">
-              The design features custom vector elements, a dynamic layout, and a modern high-contrast color palette that reflects A$AP Rocky’s fashion-forward and avant-garde style. Focus was placed on visual hierarchy and clarity, ensuring the poster works both as promotional material and as a standalone artistic piece.
-            </p>
+         The portrait focuses on simplifying complex facial features into sharp geometric planes, creating depth, dimension, and visual rhythm through carefully selected colors and gradients. Each triangle was manually placed to build a cohesive structure that reflects both precision and creativity. </p>
              <p className="project-description">
-        This project highlights my skills in vector illustration, typography, composition, and brand-driven visual storytelling, demonstrating how music culture can be transformed into impactful graphic design.  </p>
-          </div>
+   This project demonstrates my skills in vector construction, low-poly design, color mapping, and stylized portrait illustration, transforming a scientific figure into a contemporary piece of digital art suitable for print and display.</p></div>
 
           <div className="project-images">
             <div className="project-image-wrapper">
@@ -43,6 +40,7 @@ const HamedProject = () => {
    <FloatingButton />
           <Footer />
     </div>
+
   );
 };
 
