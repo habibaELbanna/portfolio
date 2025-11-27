@@ -10,11 +10,19 @@ import AboutMe from '../Component/AboutMe';
 import Footer from '../Component/Footer';
 import FloatingButton from '../Component/Floatingbutton';
 import Contact from '../Component/Contact';
-
+import { Helmet } from "react-helmet";
 import { Element } from 'react-scroll';
 
 const Home = () => {
   return (
+      <>
+    <Helmet>
+        <title>Home</title>
+        <meta name="description" content="This is the home" />
+        <meta property="og:title" content="home" />
+      
+      </Helmet>
+
     <div className="portfolio-home-container">
       <Navbar />
 
@@ -26,9 +34,6 @@ const Home = () => {
         <Graphicdesign />
       </Element>
 
-      <Element name="about">
-        <Discription />
-      </Element>
 
       <Element name="webapp">
         <Casestudy />
@@ -49,6 +54,7 @@ const Home = () => {
       <FloatingButton />
       <Footer />
     </div>
+    </>
   );
 };
 

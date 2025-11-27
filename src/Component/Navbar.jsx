@@ -33,16 +33,9 @@ const Navbar = () => {
           GRAPHIC DESIGN
         </ScrollLink>
 
-        <ScrollLink 
-          to="about" 
-          smooth={true} 
-          duration={600}
-          className="portfolio-nav-link"
-        >
-          ABOUT
-        </ScrollLink>
+       
 
-        {/* FIXED HERE ↓↓↓ */}
+     
         <ScrollLink 
           to="webapp" 
           smooth={true} 

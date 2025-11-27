@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './AboutMe.css';
+import { Helmet } from "react-helmet";
 import logo from '../Assets/imgs/logo.svg'
 import figma from '../Assets/imgs/figma.svg'
 import blender from '../Assets/imgs/blender.svg'
@@ -11,6 +12,14 @@ import more from '../Assets/imgs/more.svg'
 import af from '../Assets/imgs/effects.svg'
 const AboutMe = () => {
   return (
+    <>
+    <Helmet>
+        <title>Home</title>
+        <meta name="description" content="This is the about page" />
+        <meta property="og:title" content="About Us" />
+        <meta property="og:image" content="/images/about.png" />
+      </Helmet>
+
     <section className="aboutme">
       <div style={{ width: '695px' }}>
         <img src={logo} alt="habibaslogo" className="aboutlogo" />
@@ -90,6 +99,7 @@ const AboutMe = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
