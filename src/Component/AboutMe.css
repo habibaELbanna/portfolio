@@ -110,253 +110,37 @@
 
 /* Responsive Design */
 
-/* Large Desktop */
-@media (max-width: 1400px) {
-  .aboutlogo {
-    width: 350px;
-    margin-left: 50px;
-  }
-
-  .info2,
-  .info2ar {
-    margin-right: 80px;
-    margin-left: 50px;
-    margin-bottom: 50px;
-  }
-
-  .eduu,
-  .school {
-    margin-left: 50px;
-  }
-
-  .infoaboutme {
-    margin-left: 70px;
-    margin-top: 70px;
-  }
-
-  .infoh11 {
-    margin-right: 80px;
-  }
-}
-
-/* Desktop */
-@media (max-width: 1200px) {
-  .aboutme {
-    margin-top: 50px;
-    gap: 25px;
-  }
-
-  .aboutlogo {
-    width: 320px;
-    margin-left: 40px;
-  }
-
-  .info2,
-  .info2ar {
-    margin-right: 60px;
-    margin-left: 40px;
-    margin-bottom: 40px;
-    font-size: 0.95rem;
-  }
-
-  .eduu {
-    margin-left: 40px;
-    font-size: 1.4rem;
-  }
-
-  .school {
-    margin-left: 40px;
-    font-size: 0.95rem;
-  }
-
-  .infoaboutme {
-    margin-left: 60px;
-    margin-top: 60px;
-  }
-
-  .infoh11 {
-    margin-right: 60px;
-    font-size: 1.8rem;
-  }
-
-  .image-container {
-    padding: 35px;
-  }
-
-  .twirling-image {
-    width: 150px;
-  }
-}
-
-/* Tablet Large */
-@media (max-width: 1024px) {
-  .aboutme {
-    margin-top: 40px;
-    gap: 20px;
-    padding: 0 20px;
-  }
-
+/* Mobile Only - Just adjust margins */
+@media (max-width: 768px) {
   .aboutlogo {
     width: 280px;
-    margin-left: 30px;
-  }
-
-  .info2,
-  .info2ar {
-    margin-right: 40px;
-    margin-left: 30px;
-    margin-bottom: 35px;
-    font-size: 0.9rem;
-  }
-
-  .eduu {
-    margin-left: 30px;
-    font-size: 1.3rem;
-  }
-
-  .school {
-    margin-left: 30px;
-    font-size: 0.9rem;
-  }
-
-  .expi {
-    gap: 15px;
-  }
-
-  .infoaboutme {
-    margin-left: 50px;
-    margin-top: 50px;
-  }
-
-  .infoh11 {
-    margin-right: 40px;
-    font-size: 1.6rem;
-  }
-
-  .image-container {
-    padding: 30px;
-  }
-
-  .twirling-image {
-    width: 140px;
-  }
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-  .aboutme {
-    margin-top: 30px;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 0 15px;
-  }
-
-  .aboutlogo {
-    width: 250px;
-    margin-left: 0;
-    margin: 0 auto;
+    margin-left: 20px;
   }
 
   .info2,
   .info2ar {
     margin-right: 20px;
     margin-left: 20px;
-    margin-bottom: 30px;
-    font-size: 0.9rem;
-    text-align: center;
-  }
-
-  .info2ar {
-    text-align: center;
+    margin-bottom: 40px;
   }
 
   .eduu {
     margin-left: 20px;
-    font-size: 1.2rem;
-    text-align: center;
   }
 
   .school {
     margin-left: 20px;
-    font-size: 0.9rem;
-    text-align: center;
-  }
-
-  .expi {
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
   }
 
   .infoaboutme {
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 40px;
-    width: 100%;
   }
 
   .infoh11 {
     margin-right: 20px;
     margin-left: 20px;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
-  .image-container {
-    padding: 25px;
-  }
-
-  .twirling-image {
-    width: 130px;
-  }
-}
-
-/* Mobile Large */
-@media (max-width: 480px) {
-  .aboutme {
-    margin-top: 25px;
-    gap: 15px;
-    padding: 0 10px;
-  }
-
-  .aboutlogo {
-    width: 220px;
-  }
-
-  .info2,
-  .info2ar {
-    margin-right: 15px;
-    margin-left: 15px;
-    margin-bottom: 25px;
-    font-size: 0.85rem;
-    line-height: 1.5;
-  }
-
-  .eduu {
-    margin-left: 15px;
-    font-size: 1.1rem;
-  }
-
-  .school {
-    margin-left: 15px;
-    font-size: 0.85rem;
-  }
-
-  .expi {
-    gap: 12px;
-  }
-
-  .infoaboutme {
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-top: 30px;
-  }
-
-  .infoh11 {
-    margin-right: 15px;
-    margin-left: 15px;
-    font-size: 1.3rem;
   }
 
   .image-container {
@@ -364,167 +148,44 @@
   }
 
   .twirling-image {
-    width: 120px;
+    width: 130px;
   }
 }
 
-/* Mobile (393px - Standard) */
 @media (max-width: 393px) {
-  .aboutme {
-    margin-top: 20px;
-    gap: 12px;
-    padding: 0 8px;
-  }
-
   .aboutlogo {
-    width: 200px;
+    width: 240px;
+    margin-left: 15px;
   }
 
   .info2,
   .info2ar {
-    margin-right: 12px;
-    margin-left: 12px;
-    margin-bottom: 20px;
-    font-size: 0.8rem;
-    line-height: 1.5;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 30px;
   }
 
   .eduu {
-    margin-left: 12px;
-    font-size: 1.05rem;
+    margin-left: 15px;
   }
 
   .school {
-    margin-left: 12px;
-    font-size: 0.8rem;
-  }
-
-  .expi {
-    gap: 10px;
+    margin-left: 15px;
   }
 
   .infoaboutme {
-    margin-left: 12px;
-    margin-right: 12px;
-    margin-top: 25px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 30px;
   }
 
   .infoh11 {
-    margin-right: 12px;
-    margin-left: 12px;
-    font-size: 1.2rem;
-  }
-
-  .image-container {
-    padding: 18px;
+    margin-right: 15px;
+    margin-left: 15px;
   }
 
   .twirling-image {
     width: 110px;
-  }
-}
-
-/* Mobile Small */
-@media (max-width: 375px) {
-  .aboutme {
-    margin-top: 18px;
-    gap: 10px;
-  }
-
-  .aboutlogo {
-    width: 180px;
-  }
-
-  .info2,
-  .info2ar {
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-bottom: 18px;
-    font-size: 0.75rem;
-  }
-
-  .eduu {
-    margin-left: 10px;
-    font-size: 1rem;
-  }
-
-  .school {
-    margin-left: 10px;
-    font-size: 0.75rem;
-  }
-
-  .infoaboutme {
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 20px;
-  }
-
-  .infoh11 {
-    margin-right: 10px;
-    margin-left: 10px;
-    font-size: 1.1rem;
-  }
-
-  .image-container {
-    padding: 15px;
-  }
-
-  .twirling-image {
-    width: 100px;
-  }
-}
-
-/* Mobile Extra Small */
-@media (max-width: 320px) {
-  .aboutme {
-    margin-top: 15px;
-    gap: 8px;
-  }
-
-  .aboutlogo {
-    width: 160px;
-  }
-
-  .info2,
-  .info2ar {
-    margin-right: 8px;
-    margin-left: 8px;
-    margin-bottom: 15px;
-    font-size: 0.7rem;
-  }
-
-  .eduu {
-    margin-left: 8px;
-    font-size: 0.95rem;
-  }
-
-  .school {
-    margin-left: 8px;
-    font-size: 0.7rem;
-  }
-
-  .expi {
-    gap: 8px;
-  }
-
-  .infoaboutme {
-    margin-left: 8px;
-    margin-right: 8px;
-    margin-top: 18px;
-  }
-
-  .infoh11 {
-    margin-right: 8px;
-    margin-left: 8px;
-    font-size: 1rem;
-  }
-
-  .image-container {
-    padding: 12px;
-  }
-
-  .twirling-image {
-    width: 90px;
   }
 }
 
