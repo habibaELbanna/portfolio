@@ -9,6 +9,7 @@ import Enviroment from './Component/Enviroment';
 import Ogreblast from './Component/OgreBlast';
 import ScrollToTop from './Component/ScrollToTop';
 import SonderProject from './Component/SonderProject';
+import ShadowEdgeProject from './Component/ShadowEdgeProject';
 
 
 const Routing = () => {
@@ -26,6 +27,7 @@ const Routing = () => {
            <Route path="/leg-project" element={<Enviroment />} />
    <Route path="/ogre-project" element={<Ogreblast />} />
    <Route path="/sonder-project" element={<SonderProject />} />
+   <Route path="/shadow-project" element={<ShadowEdgeProject />} />
       </Routes>
    </BrowserRouter>
    </>
