@@ -32,7 +32,7 @@ const RepairProject = () => {
     <div className="repairo-project-container">
       <p className="repairo-proj_name">Repairo</p>
       <p className="repairo-proj_title">
-        Description for Repairo project - add your project tagline here
+        Repairo is a modern phone repair service offering quick, reliable fixes for all major devices.
       </p>
 
       <div className="repairo-banner-container">
@@ -104,9 +104,7 @@ const RepairProject = () => {
           <p className="repairo-proj_info1">
             <span style={{ fontFamily: 'anton', fontSize: '50px' }}>about</span>
             <br />
-            Add your Repairo project description here. Describe what the project is about, its goals, features, and what makes it unique.
-            <br />
-            Add more details about the project, the problem it solves, and the design process.
+         Repairo is a fast, reliable phone repair service focused on convenience and quality. The project highlights quick diagnostics, expert repairs, and a user-friendly experience designed to make fixing your device simple and stress-free.
           </p>
         </div>
       </div>
@@ -121,8 +119,7 @@ const RepairProject = () => {
       </div>
 
       <p className="repairo-proj_namephasebranding">
-        This branding section highlights the project's visual identity. Describe your color palette, brand personality, and visual elements here.
-      </p>
+   This branding section defines Repairo’s visual identity, using clean, modern colors and a straightforward, trustworthy tone. Simple tech-inspired icons highlight repair services and help guide users through the experience. </p>
 
       <h1 className="repairo-proj_namephaseux">03. Product Design</h1>
 
