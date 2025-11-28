@@ -33,7 +33,7 @@ const KemetProject = () => {
     <div className="kemet-project-container">
       <p className="kemet-proj_name">Kemet</p>
       <p className="kemet-proj_title">
-        Description for Kemet project - add your project tagline here
+        An Immersive Journey Through Ancient Egypt
       </p>
 
       <div className="kemet-banner-container">
@@ -105,20 +105,12 @@ const KemetProject = () => {
           <p className="kemet-proj_info1">
             <span style={{ fontFamily: 'anton', fontSize: '50px' }}>about</span>
             <br />
-            Add your Kemet project description here. Describe what the project is about, its goals, features, and what makes it unique.
-            <br />
-            Add more details about the project, the problem it solves, and the design process.
+          Kemet is a narrative-driven website exploring over 3,000 years of Ancient Egyptian history. It combines accessible research with high-fidelity 3D models and interactive reconstructions, letting users virtually explore temples, tombs, and ancient cities.
           </p>
         </div>
       </div>
 
-      <p className="kemet-proj_namephaseux">01.The ux</p>
-
-      <img className="kemet-project_logo1" src={uxKemet} alt="UX Design" />
-      <p className="kemet-proj_namephasebranding">
-        This UX section outlines the research and design process behind the Kemet project. Add your UX research insights, user journey, and design decisions here.
-      </p>
-
+    
       <p className="kemet-proj_namephaseux">02.The Branding</p>
 
       <div className="kemet-branding">
@@ -127,8 +119,8 @@ const KemetProject = () => {
       </div>
 
       <p className="kemet-proj_namephasebranding">
-        This branding section highlights the project's visual identity. Describe your color palette, brand personality, and visual elements here.
-      </p>
+This branding section outlines the visual identity, using a blue and gold palette and a clear, historically inspired style. Custom dynasty icons serve as key visual elements, reinforcing both navigation and theme.
+</p>
 
       <h1 className="kemet-proj_namephaseux">03. Product Design</h1>
 
