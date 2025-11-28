@@ -143,9 +143,7 @@
   grid-row: 3;
 }
 
-.vortex-product-design-box.vortex-pd-img-contain img {
-  object-fit: cover;
-}
+
 
 .vortex-product-design-box.vortex-pd-img-containn img {
   object-fit: contain;

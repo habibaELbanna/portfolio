@@ -1,31 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './VortexProject.css';
-import logoVortex from '../Assets/imgs/casestudy/vortex.png';
+import logoVortex from '../Assets/imgs/casestudy/vortexlogo.svg';
 import vortexVideo from '../Assets/imgs/vortex/vortex.mp4';
 import ankhIcon from '../Assets/imgs/ankh.svg';
 import uxVortex from '../Assets/imgs/vortex/uxvortex.png';
 import brandColorVortex from '../Assets/imgs/vortex/brandcolorvortex.png';
 import vortexStickers from '../Assets/imgs/vortex/vortexstickers.png';
 import loginVortex from '../Assets/imgs/vortex/loginvortex.png';
-import vortex33 from '../Assets/imgs/vortex/1.png';
-import vortex22 from '../Assets/imgs/vortex/13.png';
-import vortexx from '../Assets/imgs/vortex/10.png';
-import logo1 from '../Assets/imgs/vortex/1.png';
-import logo2 from '../Assets/imgs/vortex/2.png';
-import logo3 from '../Assets/imgs/vortex/3.png';
-import logo4 from '../Assets/imgs/vortex/4.png';
-import logo5 from '../Assets/imgs/vortex/5.png';
-import logo6 from '../Assets/imgs/vortex/6.png';
-import logo7 from '../Assets/imgs/vortex/7.png';
-import logo8 from '../Assets/imgs/vortex/8.png';
+import vortex33 from '../Assets/imgs/vortex/1.svg';
+import vortex22 from '../Assets/imgs/vortex/3.svg';
+import vortexx from '../Assets/imgs/vortex/2.svg';
+import logo1 from '../Assets/imgs/vortex/1.svg';
+import logo2 from '../Assets/imgs/vortex/2.svg';
+import logo3 from '../Assets/imgs/vortex/3.svg';
+import logo4 from '../Assets/imgs/vortex/4.svg';
+import logo5 from '../Assets/imgs/vortex/5.svg';
+import logo6 from '../Assets/imgs/vortex/6.svg';
+
 import Nav from '../Component/Navbar';
 import Footer from '../Component/Footer';
 import FloatingButton from '../Component/Floatingbutton';
 
 const VortexProject = () => {
     
-  const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8];
+  const logos = [logo1, logo2, logo3, logo4, logo5, logo6];
 
   return (
     <>
