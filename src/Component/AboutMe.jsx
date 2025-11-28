@@ -9,7 +9,12 @@ import illus from '../Assets/imgs/illus.svg'
 import photoshop from '../Assets/imgs/photoshop.svg'
 import agumented from '../Assets/imgs/reality.svg'
 import more from '../Assets/imgs/more.svg'
+import html from '../Assets/imgs/html.svg'
+import css from '../Assets/imgs/text.svg'
+import react from '../Assets/imgs/atom.svg'
+import api from '../Assets/imgs/response.svg'
 import af from '../Assets/imgs/effects.svg'
+import js from '../Assets/imgs/javascript.svg'
 const AboutMe = () => {
   return (
     <>
@@ -41,6 +46,14 @@ const AboutMe = () => {
           <span style={{ color: 'rgb(255, 255, 255)', fontWeight: 600 }}>-Higher ED<br /></span>
           EUI Egypt University of Informatics
         </h2>
+           <h1 className="eduu">Experience</h1>
+        <h3 className="school">
+          -Summer internship<br />
+          -delta electronic systems July 2023<br />
+          -delta electronic systems July 2024<br />
+          -Cyshield august 2024<br />
+          -Cyshield august 2025
+        </h3>
       </div>
 
       <div className="infoaboutme">
@@ -74,7 +87,28 @@ const AboutMe = () => {
           <img s src={af}alt="" />
           <h3 className="softwaruse">After Effects</h3>
         </div>
+ <div className="expi">
+          <img s src={html}alt="" />
+          <h3 className="softwaruse">HTML</h3>
+        </div>
 
+        <div className="expi">
+          <img s src={css}alt="" />
+          <h3 className="softwaruse">CSS</h3>
+        </div>
+
+        <div className="expi">
+          <img s src={js}alt="" />
+          <h3 className="softwaruse">JavaScript</h3>
+        </div>
+        <div className="expi">
+          <img s src={react}alt="" />
+          <h3 className="softwaruse">ReactJS</h3>
+        </div>
+        <div className="expi">
+          <img s src={api}alt="" />
+          <h3 className="softwaruse">APIs</h3>
+        </div>
         <h1 className="infoh11">Analogue skills</h1>
         <h3 className="softwaruse">
           -UX research<br />
@@ -85,14 +119,7 @@ const AboutMe = () => {
           -Problem Solving
         </h3>
 
-        <h1 className="infoh11">Experience</h1>
-        <h3 className="softwaruse">
-          -Summer internship<br />
-          -delta electronic systems July 2023<br />
-          -delta electronic systems July 2024<br />
-          -Cyshield august 2024<br />
-          -Cyshield august 2025
-        </h3>
+     
 
         <div className="image-container">
           <img  src={more} alt="More More More" className="twirling-image" />
