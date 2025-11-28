@@ -32,7 +32,7 @@ const PinkTaxiProject = () => {
     <div className="pinktaxi-project-container">
       <p className="pinktaxi-proj_name">Pink Taxi</p>
       <p className="pinktaxi-proj_title">
-        An Immersive Journey Through Ancient Egypt
+       Pink Taxi offers quick booking, trusted drivers, and a safety-first experience tailored specifically for women’s daily travel needs.
       </p>
 
       <div className="pinktaxi-banner-container">
@@ -104,8 +104,7 @@ const PinkTaxiProject = () => {
           <p className="pinktaxi-proj_info1">
             <span style={{ fontFamily: 'anton', fontSize: '50px' }}>about</span>
             <br />
-          Kemet is a narrative-driven website exploring over 3,000 years of Ancient Egyptian history. It combines accessible research with high-fidelity 3D models and interactive reconstructions, letting users virtually explore temples, tombs, and ancient cities.
-          </p>
+      Pink Taxi is a safe, women-focused transportation app designed to provide secure, comfortable, and reliable rides for women by women.  </p>
         </div>
       </div>
 
@@ -117,9 +116,7 @@ const PinkTaxiProject = () => {
         <img className="pinktaxi-project_logokemet" src={pinktaxiStickers} alt="Stickers" />
       </div>
 
-      <p className="pinktaxi-proj_namephasebranding">
-This branding section outlines the visual identity, using a blue and gold palette and a clear, historically inspired style. Custom dynasty icons serve as key visual elements, reinforcing both navigation and theme.
-</p>
+      <p className="pinktaxi-proj_namephasebranding">Pink Taxi’s branding uses soft, confident pink tones and clean visuals to convey safety, trust, and comfort. Simple icons and friendly UI elements highlight ease of use and a supportive experience.</p>
 
       <h1 className="pinktaxi-proj_namephaseux">03. Product Design</h1>
 
