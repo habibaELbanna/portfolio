@@ -2,7 +2,13 @@ import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './OgreBlast.css';
 import Navbar from '../Component/Navbar';
-import leg from '../Assets/imgs/graphicdesign/posters/habiba_illustration_year1_003.jpg';
+import ogre11 from '../Assets/imgs/graphicdesign/ogre_blast/habiba_screen_year3_001_002.jpg';
+import ogre2 from '../Assets/imgs/graphicdesign/ogre_blast/habiba_screen_year3_001_003.jpg';
+import ogre3 from'../Assets/imgs/graphicdesign/ogre_blast/habiba_screen_year3_001_004.jpg';
+import ogre4 from '../Assets/imgs/graphicdesign/ogre_blast/habiba_screen_year3_001_005.jpg';
+import ogre5 from '../Assets/imgs/graphicdesign/ogre_blast/habiba_screen_year3_001_006.jpg';
+import ogre6 from '../Assets/imgs/graphicdesign/ogre_blast/habiba_screen_year3_001_007.jpg';
+import ogre1 from '../Assets/imgs/graphicdesign/ogre_blast/habiba_screen_year3_001.jpg';
 import Footer from '../Component/Footer';
 import FloatingButton from '../Component/Floatingbutton';
 
@@ -78,21 +84,34 @@ This project is a non-commercial university assignment. Ogre Blast is a conceptu
             </div>
 
             <div className="ogre-proof-card ogre-image-card">
-              <img src={leg} alt="Environment Design 1" />
+              <img src={ogre1} alt="Environment Design 1" />
             </div>
 
             <div className="ogre-proof-card ogre-image-card">
-              <img src={leg} alt="Environment Design 2" />
+              <img src={ogre11} alt="Environment Design 2" />
             </div>
 
             <div className="ogre-proof-card ogre-image-card">
-              <img src={leg} alt="Environment Design 3" />
+              <img src={ogre2} alt="Environment Design 3" />
             </div>
 
             <div className="ogre-proof-card ogre-image-card">
-              <img src={leg} alt="Environment Design 4" />
+              <img src={ogre3} alt="Environment Design 4" />
             </div>
 
+  <div className="ogre-proof-card ogre-image-card">
+              <img src={ogre4} alt="Environment Design 4" />
+            </div>
+
+  <div className="ogre-proof-card ogre-image-card">
+              <img src={ogre5} alt="Environment Design 4" />
+            </div>
+
+  <div className="ogre-proof-card ogre-image-card">
+              <img src={ogre6} alt="Environment Design 4" />
+            </div>
+
+ 
           </div>
         </div>
       </div>
