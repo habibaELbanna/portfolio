@@ -67,19 +67,22 @@ const ShadowEdgeProject = () => {
           <div className="shadow-scroll-container" ref={scrollContainerRef}>
             
             <div className="shadow-proof-card shadow-text-card">
-              <h1 className="shadow-project-title">Shadow Edge<br />Graphic Design Project</h1>
+              <h1 className="shadow-project-title">Shadow Edge <br></br> Game UI Design<br></br> (University Project)</h1>
 
               <p className="shadow-project-description">
-                Description of your Shadow Edge project goes here. Replace this with your actual project description.
+               This project is a full UI redesign created for a university assignment, originally inspired by the aesthetic and atmosphere of the game LIMBO, but reimagined and renamed as Shadow Edge for academic purposes. The goal was to develop a user interface that reflects the game’s dark, minimalist world while maintaining clarity, immersion, and emotional depth.
               </p>
 
               <p className="shadow-project-description">
-                Add more details about the design process, inspirations, and creative decisions.
+             The UI system includes menu screens, HUD elements, icon sets, button systems, and in-game overlays. The visual direction relies on high-contrast silhouettes, muted tones, and subtle animation cues to echo the eerie, atmospheric style of the original inspiration. Every element was designed with simplicity and tension in mind to enhance player focus and maintain the game’s moody storytelling.
               </p>
               
               <p className="shadow-project-description">
-                Highlight your skills and what this project showcases about your design abilities.
+                This project highlights my skills in UI layout design, style adaptation, visual hierarchy, contrast-based design, and game atmosphere development, transforming a narrative-driven world into a cohesive, functional interface.
               </p>
+                <p className="shadow-project-description">
+         Copyright / Academic Disclaimer<br></br>
+This project is a non-commercial university assignment. “Shadow Edge” is a conceptual redesign inspired by the style of the game LIMBO. All original characters, narrative elements, and intellectual property belong to their respective owners. This work is intended exclusively for educational and portfolio purposes.   </p>
             </div>
 
             <div className="shadow-proof-card shadow-image-card">
