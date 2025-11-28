@@ -68,16 +68,19 @@ const SonderProject = () => {
               <h1 className="sonder-project-title">Sonder <br></br> Game UI Design <br></br>(University Project)</h1>
 
               <p className="sonder-project-description">
-                Description of your Sonder project goes here. Replace this with your actual project description.
+              This project is a full UI redesign created for a university assignment, originally inspired by the visual style of the game GRIS, but reimagined and renamed as SONDER for academic purposes. The goal was to develop a cohesive user interface that reflects the game’s emotional tone, soft aesthetic, and narrative themes.
               </p>
 
               <p className="sonder-project-description">
-                Add more details about the design process, inspirations, and creative decisions.
+              The UI design includes menus, HUD elements, button systems, iconography, and in-game screens. I focused on creating a calm and atmospheric experience through minimal layouts, soft color palettes, and smooth visual hierarchy. Each screen was designed to enhance player immersion while maintaining clarity and usability.
               </p>
               
               <p className="sonder-project-description">
-                Highlight your skills and what this project showcases about your design abilities.
+               This project demonstrates my skills in UI layout design, visual hierarchy, color theory, typography, and stylistic adaptation, showing how artistic emotion can be translated into interactive visual systems.
               </p>
+                <p className="sonder-project-description">
+           Copyright / Academic Disclaimer<br></br>
+This project is a non-commercial university assignment. “Sonder” is a conceptual redesign inspired by the style of the game GRIS. All original characters, story elements, and intellectual property belong to their respective owners. This work is intended for educational and portfolio purposes only.  </p>
             </div>
 
             <div className="sonder-proof-card sonder-image-card">
