@@ -12,6 +12,7 @@ import SonderProject from './Component/SonderProject';
 import ShadowEdgeProject from './Component/ShadowEdgeProject';
 import KemetProject from './Component/KemetProject';
 import RepairProject from './Component/RepairProject';
+import VortexProject from './Component/VortexProject';
 
 
 const Routing = () => {
@@ -32,6 +33,7 @@ const Routing = () => {
    <Route path="/shadow-project" element={<ShadowEdgeProject />} />
    <Route path="/project/1" element={<KemetProject />} />
       <Route path="/project/2" element={<RepairProject/>} />
+           <Route path="/project/6" element={<VortexProject />} />
       </Routes>
    </BrowserRouter>
    </>
