@@ -143,9 +143,7 @@
   grid-row: 3;
 }
 
-.pinktaxi-product-design-box.pinktaxi-pd-img-contain img {
-  object-fit: cover;
-}
+
 
 .pinktaxi-product-design-box.pinktaxi-pd-img-containn img {
   object-fit: contain;
