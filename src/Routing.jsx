@@ -8,6 +8,7 @@ import HamedProject from './Component/HamedProject';
 import Enviroment from './Component/Enviroment';
 import Ogreblast from './Component/OgreBlast';
 import ScrollToTop from './Component/ScrollToTop';
+import SonderProject from './Component/SonderProject';
 
 
 const Routing = () => {
@@ -24,6 +25,7 @@ const Routing = () => {
           <Route path="/Hamed-project" element={<HamedProject />} />
            <Route path="/leg-project" element={<Enviroment />} />
    <Route path="/ogre-project" element={<Ogreblast />} />
+   <Route path="/sonder-project" element={<SonderProject />} />
       </Routes>
    </BrowserRouter>
    </>

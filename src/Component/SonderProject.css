@@ -1,9 +1,9 @@
-.ogre-scroll-wrapper {
+.sonder-scroll-wrapper {
   height: 300vh;
   position: relative;
 }
 
-.ogre-horizontal-scroll-section {
+.sonder-horizontal-scroll-section {
   position: sticky;
   top: 0;
   width: 100%;
@@ -13,7 +13,7 @@
   overflow: hidden;
 }
 
-.ogre-scroll-container {
+.sonder-scroll-container {
   display: flex;
   gap: 2rem;
   padding: 2rem;
@@ -22,13 +22,13 @@
   margin-top: 117px;
 }
 
-.ogre-proof-card {
+.sonder-proof-card {
   flex-shrink: 0;
   height: 80vh;
   border-radius: 10px;
 }
 
-.ogre-text-card {
+.sonder-text-card {
   font-family: "Oswald", sans-serif;
   min-width: 500px;
   max-width: 500px;
@@ -41,17 +41,15 @@
   overflow-y: auto;
   overflow-x: hidden;
   
- 
   scrollbar-width: none;
   -ms-overflow-style: none; 
 }
 
-
-.ogre-text-card::-webkit-scrollbar {
+.sonder-text-card::-webkit-scrollbar {
   display: none;
 }
 
-.ogre-project-title {
+.sonder-project-title {
   font-size: 40px;
   font-family: "Oswald", sans-serif;
   margin-bottom: 1.5rem;
@@ -59,21 +57,21 @@
   color: #204794;
 }
 
-.ogre-project-description {
+.sonder-project-description {
   font-size: 0.95rem;
   line-height: 1.6;
   color: #cccccc;
   margin-bottom: 1.2rem;
 }
 
-.ogre-image-card {
+.sonder-image-card {
   position: relative;
   cursor: pointer;
   overflow: hidden;
   background: #000;
 }
 
-.ogre-image-card > img {
+.sonder-image-card > img {
   height: 100%;
   width: auto;
   object-fit: cover;
@@ -82,56 +80,56 @@
   display: block;
 }
 
-.ogre-image-card:hover > img {
+.sonder-image-card:hover > img {
   filter: brightness(0.7);
   transform: scale(1.05);
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .ogre-scroll-wrapper {
+  .sonder-scroll-wrapper {
     height: 250vh;
   }
 
-  .ogre-text-card {
+  .sonder-text-card {
     min-width: 400px;
     max-width: 400px;
     padding: 1.5rem;
   }
 
-  .ogre-project-title {
+  .sonder-project-title {
     font-size: 2rem;
   }
 
-  .ogre-project-description {
+  .sonder-project-description {
     font-size: 0.9rem;
   }
 
-  .ogre-proof-card {
+  .sonder-proof-card {
     height: 70vh;
   }
 }
 
 @media (max-width: 768px) {
-  .ogre-scroll-wrapper {
+  .sonder-scroll-wrapper {
     height: 200vh;
   }
 
-  .ogre-text-card {
+  .sonder-text-card {
     min-width: 300px;
     max-width: 300px;
     padding: 1.5rem;
   }
 
-  .ogre-project-title {
+  .sonder-project-title {
     font-size: 1.8rem;
   }
 
-  .ogre-project-description {
+  .sonder-project-description {
     font-size: 0.85rem;
   }
 
-  .ogre-proof-card {
+  .sonder-proof-card {
     height: 60vh;
   }
 }
