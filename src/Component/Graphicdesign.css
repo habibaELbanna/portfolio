@@ -11,8 +11,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-   margin-top: 60px;
-
+  margin-top: 60px;
 }
 
 .scroll-container {
@@ -21,7 +20,6 @@
   padding: 2rem;
   transition: transform 0.1s ease-out;
   will-change: transform;
- 
 }
 
 .proof-card {
@@ -35,23 +33,18 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
- 
   color: #0e0e0e;
   background: transparent;
 }
- 
-     
 
 .text-card h1 {
   font-size: 120px;
-    -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: #204794;
-    color: #0E0E0E;
-       font-family: 'Banna', sans-serif;
-           margin-top: 330px;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #204794;
+  color: #0E0E0E;
+  font-family: 'Banna', sans-serif;
+  margin-top: 330px;
 }
-
-
 
 .image-card {
   position: relative;
@@ -100,4 +93,281 @@
 
 .image-card:hover .logo {
   transform: scale(1);
+}
+
+/* Responsive Design */
+
+/* Large Desktop */
+@media (max-width: 1400px) {
+  .text-card h1 {
+    font-size: 100px;
+    margin-top: 280px;
+  }
+
+  .text-card {
+    min-width: 450px;
+  }
+
+  .proof-card {
+    height: 75vh;
+  }
+}
+
+/* Desktop */
+@media (max-width: 1200px) {
+  .text-card h1 {
+    font-size: 90px;
+    -webkit-text-stroke-width: 2.5px;
+    margin-top: 250px;
+  }
+
+  .text-card {
+    min-width: 400px;
+  }
+
+  .scroll-container {
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .proof-card {
+    height: 70vh;
+  }
+
+  .logo {
+    width: 70px;
+  }
+}
+
+/* Tablet Large */
+@media (max-width: 1024px) {
+  .scroll-wrapper {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .horizontal-scroll-section {
+    position: relative;
+    height: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-top: 40px;
+    padding: 2rem 0;
+  }
+
+  .scroll-container {
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .text-card {
+    min-width: 350px;
+  }
+
+  .text-card h1 {
+    font-size: 80px;
+    -webkit-text-stroke-width: 2px;
+    margin-top: 200px;
+  }
+
+  .proof-card {
+    height: 60vh;
+    min-height: 450px;
+  }
+
+  .logo {
+    width: 60px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .horizontal-scroll-section {
+    margin-top: 30px;
+    padding: 1.5rem 0;
+  }
+
+  .scroll-container {
+    gap: 1.2rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .text-card {
+    min-width: 300px;
+  }
+
+  .text-card h1 {
+    font-size: 60px;
+    -webkit-text-stroke-width: 2px;
+    margin-top: 150px;
+  }
+
+  .proof-card {
+    height: 55vh;
+    min-height: 400px;
+  }
+
+  .image-card > img {
+    border-radius: 8px;
+  }
+
+  .logo {
+    width: 50px;
+  }
+
+  /* Touch-friendly hover states */
+  .image-card:active > img {
+    filter: brightness(0.4);
+    transform: scale(1.05);
+  }
+
+  .image-card:active .image-overlay {
+    opacity: 1;
+  }
+
+  .image-card:active .logo {
+    transform: scale(1);
+  }
+}
+
+/* Mobile Large */
+@media (max-width: 480px) {
+  .horizontal-scroll-section {
+    margin-top: 20px;
+    padding: 1rem 0;
+  }
+
+  .scroll-container {
+    gap: 1rem;
+    padding: 0.8rem 0.5rem;
+  }
+
+  .text-card {
+    min-width: 250px;
+  }
+
+  .text-card h1 {
+    font-size: 48px;
+    -webkit-text-stroke-width: 1.5px;
+    margin-top: 120px;
+  }
+
+  .proof-card {
+    height: 50vh;
+    min-height: 350px;
+  }
+
+  .image-card > img {
+    border-radius: 6px;
+  }
+
+  .logo {
+    width: 45px;
+  }
+}
+
+/* Mobile (393px - Standard) */
+@media (max-width: 393px) {
+  .horizontal-scroll-section {
+    margin-top: 15px;
+    padding: 1rem 0;
+  }
+
+  .scroll-container {
+    gap: 0.8rem;
+    padding: 0.5rem;
+  }
+
+  .text-card {
+    min-width: 220px;
+  }
+
+  .text-card h1 {
+    font-size: 42px;
+    -webkit-text-stroke-width: 1.5px;
+    margin-top: 100px;
+  }
+
+  .proof-card {
+    height: 45vh;
+    min-height: 320px;
+  }
+
+  .logo {
+    width: 40px;
+  }
+}
+
+/* Mobile Small */
+@media (max-width: 375px) {
+  .text-card {
+    min-width: 200px;
+  }
+
+  .text-card h1 {
+    font-size: 36px;
+    -webkit-text-stroke-width: 1.5px;
+    margin-top: 80px;
+  }
+
+  .proof-card {
+    height: 42vh;
+    min-height: 300px;
+  }
+
+  .scroll-container {
+    gap: 0.6rem;
+  }
+
+  .logo {
+    width: 35px;
+  }
+}
+
+/* Mobile Extra Small */
+@media (max-width: 320px) {
+  .text-card {
+    min-width: 180px;
+  }
+
+  .text-card h1 {
+    font-size: 32px;
+    -webkit-text-stroke-width: 1px;
+    margin-top: 70px;
+  }
+
+  .proof-card {
+    height: 40vh;
+    min-height: 280px;
+  }
+
+  .scroll-container {
+    gap: 0.5rem;
+    padding: 0.3rem;
+  }
+
+  .logo {
+    width: 30px;
+  }
+}
+
+/* Custom scrollbar for horizontal scroll on mobile */
+@media (max-width: 1024px) {
+  .horizontal-scroll-section::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .horizontal-scroll-section::-webkit-scrollbar-track {
+    background: rgba(32, 71, 148, 0.1);
+    border-radius: 10px;
+  }
+
+  .horizontal-scroll-section::-webkit-scrollbar-thumb {
+    background: #204794;
+    border-radius: 10px;
+  }
+
+  .horizontal-scroll-section::-webkit-scrollbar-thumb:hover {
+    background: #1a3a7a;
+  }
 }
