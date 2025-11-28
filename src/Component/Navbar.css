@@ -58,7 +58,7 @@
   width: 100%;
 }
 
-/* Burger Menu Button */
+
 .burger-menu {
   display: none;
   flex-direction: column;
@@ -82,7 +82,7 @@
   transform-origin: center;
 }
 
-/* Burger Animation */
+
 .burger-menu.active .burger-line:nth-child(1) {
   transform: translateY(10.5px) rotate(45deg);
   background-color: #204794;
@@ -98,7 +98,7 @@
   background-color: #204794;
 }
 
-/* Menu Overlay */
+
 .menu-overlay {
   display: none;
   position: fixed;
@@ -118,7 +118,7 @@
   pointer-events: auto;
 }
 
-/* Responsive Design */
+
 @media (max-width: 1024px) {
   .portfolio-navigation-header {
     padding: 1rem 2rem;
@@ -138,17 +138,17 @@
     padding: 1rem 1.5rem;
   }
 
-  /* Show burger menu */
+ 
   .burger-menu {
     display: flex;
   }
 
-  /* Show overlay */
+  
   .menu-overlay {
     display: block;
   }
 
-  /* Mobile Menu Styles */
+  
   .portfolio-main-navigation {
     position: fixed;
     top: 0;
@@ -176,7 +176,7 @@
     transition: all 0.3s ease;
   }
 
-  /* Staggered animation for menu items */
+
   .portfolio-main-navigation.menu-open .portfolio-nav-link:nth-child(1) {
     animation: slideIn 0.4s ease forwards 0.1s;
   }
@@ -221,7 +221,7 @@
   }
 }
 
-/* Slide in animation */
+
 @keyframes slideIn {
   to {
     opacity: 1;
@@ -229,7 +229,7 @@
   }
 }
 
-/* Prevent body scroll when menu is open */
+
 body.menu-open {
   overflow: hidden;
 }

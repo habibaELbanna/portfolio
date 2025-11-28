@@ -99,7 +99,7 @@ const Navbar = () => {
 
       </nav>
 
-      {/* Overlay for mobile menu */}
+     
       <div 
         className={`menu-overlay ${isMenuOpen ? 'active' : ''}`}
         onClick={closeMenu}
