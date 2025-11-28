@@ -29,34 +29,40 @@
 
 .ogre-text-card {
   font-family: "Oswald", sans-serif;
-  min-width: 600px;
+  min-width: 500px;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 2rem;
   color: #ffffff;
   background: transparent;
+  overflow-y: auto;
+  overflow-x: hidden;
+  
+  /* Hide scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
 }
 
-.ogre-text-card h1 {
-  font-family: "Oswald", sans-serif;
-  font-size: 60px;
-  color: #204794;
+/* Hide scrollbar for Chrome, Safari, Opera */
+.ogre-text-card::-webkit-scrollbar {
+  display: none;
 }
 
 .ogre-project-title {
-  font-size: 3.5rem;
+  font-size: 40px;
   font-family: "Oswald", sans-serif;
-  margin-bottom: 2rem;
-  line-height: 1.1;
-  color: #ffffff;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  color: #204794;
 }
 
 .ogre-project-description {
-  font-size: 1.1rem;
-  line-height: 1.8;
+  font-size: 0.95rem;
+  line-height: 1.6;
   color: #cccccc;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
 .ogre-image-card {
@@ -78,4 +84,53 @@
 .ogre-image-card:hover > img {
   filter: brightness(0.7);
   transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .ogre-scroll-wrapper {
+    height: 250vh;
+  }
+
+  .ogre-text-card {
+    min-width: 400px;
+    max-width: 400px;
+    padding: 1.5rem;
+  }
+
+  .ogre-project-title {
+    font-size: 2rem;
+  }
+
+  .ogre-project-description {
+    font-size: 0.9rem;
+  }
+
+  .ogre-proof-card {
+    height: 70vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .ogre-scroll-wrapper {
+    height: 200vh;
+  }
+
+  .ogre-text-card {
+    min-width: 300px;
+    max-width: 300px;
+    padding: 1.5rem;
+  }
+
+  .ogre-project-title {
+    font-size: 1.8rem;
+  }
+
+  .ogre-project-description {
+    font-size: 0.85rem;
+  }
+
+  .ogre-proof-card {
+    height: 60vh;
+  }
 }

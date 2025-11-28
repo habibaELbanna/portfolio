@@ -17,7 +17,7 @@ const Ogreblast = () => {
     const updateHorizontalScroll = () => {
       if (!scrollContainer || !scrollWrapper) return;
 
-      const cards = scrollContainer.querySelectorAll('.proof-card');
+      const cards = scrollContainer.querySelectorAll('.ogre-proof-card');
       const totalCardsWidth = Array.from(cards).reduce((total, card) => {
         return total + card.offsetWidth + 32;
       }, 0);
@@ -31,8 +31,8 @@ const Ogreblast = () => {
 
       if (scrollProgress >= 0 && scrollProgress <= wrapperHeight - window.innerHeight) {
         const progress = scrollProgress / (wrapperHeight - window.innerHeight);
-        const translateX = -progress * maxScroll;
-        scrollContainer.style.transform = `translateX(${translateX}px)`;
+        const translateX = progress * maxScroll; // Changed this line - removed the minus sign
+        scrollContainer.style.transform = `translateX(-${translateX}px)`; // Keep minus here
       } else if (scrollProgress < 0) {
         scrollContainer.style.transform = `translateX(0px)`;
       } else {
@@ -52,41 +52,53 @@ const Ogreblast = () => {
 
   return (
     <>
-    <Navbar />
-    <div className="ogre-scroll-wrapper" ref={wrapperRef}>
-  <div className="ogre-horizontal-scroll-section">
-    <div className="ogre-scroll-container" ref={scrollContainerRef}>
-      
-      <div className="ogre-proof-card ogre-text-card">
-        <h1 className="ogre-project-title">Environmental Concept Art</h1>
+      <Navbar />
+      <div className="ogre-scroll-wrapper" ref={wrapperRef}>
+        <div className="ogre-horizontal-scroll-section">
+          <div className="ogre-scroll-container" ref={scrollContainerRef}>
+            
+            <div className="ogre-proof-card ogre-text-card">
+              <h1 className="ogre-project-title">Ogre Blast<br></br>AR Mobile Game Concept<br></br> (University Project)</h1>
 
-        <p className="ogre-project-description">
-          This project is a hand-drawn digital illustration created in Adobe Photoshop...
-        </p>
+              <p className="ogre-project-description">
+               This project is an original AR mobile game concept created as part of a university assignment, inspired by the world and characters of the movie Shrek. The game, titled Ogre Blast, reimagines the Shrek universe through playful mechanics and interactive augmented-reality features designed to engage players in a fun, immersive experience.     </p>
 
+              <p className="ogre-project-description">
+        The concept includes UI design, gameplay flow, character interactions, and AR elements that appear in real-world environments. The game encourages players to complete mini-quests, collect magical items, and interact with ogre-themed effects through their device’s camera. Visual direction was kept vibrant, humorous, and family-friendly to match the iconic charm of the Shrek franchise. </p>
+              
+              <p className="ogre-project-description">
+         This project showcases my skills in game UI design, AR concept development, mobile layout systems, interactive design, and visual storytelling, blending recognizable themes with original mechanics suitable for mobile platforms.   </p>
+            
+                       <p className="ogre-project-description">
+                        Copyright / Academic Disclaimer<br></br>
+This project is a non-commercial university assignment. Ogre Blast is a conceptual AR game inspired by the Shrek franchise. All original characters, story elements, and intellectual property belong to their respective owners. This work is created solely for educational and portfolio purposes.
+  </p>
+           
+            
+            </div>
+
+            <div className="ogre-proof-card ogre-image-card">
+              <img src={leg} alt="Environment Design 1" />
+            </div>
+
+            <div className="ogre-proof-card ogre-image-card">
+              <img src={leg} alt="Environment Design 2" />
+            </div>
+
+            <div className="ogre-proof-card ogre-image-card">
+              <img src={leg} alt="Environment Design 3" />
+            </div>
+
+            <div className="ogre-proof-card ogre-image-card">
+              <img src={leg} alt="Environment Design 4" />
+            </div>
+
+          </div>
+        </div>
       </div>
-
-      <div className="ogre-proof-card ogre-image-card">
-        <img src={leg} alt="Environment Design 1" />
-      </div>
-
-      <div className="ogre-proof-card ogre-image-card">
-        <img src={leg} alt="Environment Design 2" />
-      </div>
-
-      <div className="ogre-proof-card ogre-image-card">
-        <img src={leg} alt="Environment Design 3" />
-      </div>
-
-      <div className="ogre-proof-card ogre-image-card">
-        <img src={leg} alt="Environment Design 4" />
-      </div>
-
-    </div>
-  </div>
-</div>
-<Footer />
-</>
+      <FloatingButton />
+      <Footer />
+    </>
   );
 };
 
