@@ -3,6 +3,17 @@ import { Link } from 'react-router-dom';
 import './ShadowEdgeProject.css';
 import Navbar from '../Component/Navbar';
 import shadow from '../Assets/imgs/graphicdesign/shadow_edge/header.jpg';
+import shadow2 from '../Assets/imgs/graphicdesign/shadow_edge/habiba_screen_year3_002_001.jpg';
+import shadow3 from '../Assets/imgs/graphicdesign/shadow_edge/habiba_screen_year3_002_002.jpg';
+import shadow4 from '../Assets/imgs/graphicdesign/shadow_edge/habiba_screen_year3_002_003.jpg';
+import shadow5 from '../Assets/imgs/graphicdesign/shadow_edge/habiba_screen_year3_002_004.jpg';
+import shadow6 from '../Assets/imgs/graphicdesign/shadow_edge/habiba_screen_year3_002_005.jpg';
+import shadow7 from '../Assets/imgs/graphicdesign/shadow_edge/habiba_screen_year3_002_006.jpg';
+import shadow8 from '../Assets/imgs/graphicdesign/shadow_edge/habiba_screen_year3_002_007.jpg';
+import shadow9 from '../Assets/imgs/graphicdesign/shadow_edge/habiba_screen_year3_002_0011.jpg';
+import shadow10 from '../Assets/imgs/graphicdesign/shadow_edge/habiba_screen_year3_002_009.jpg';
+import shadow11 from '../Assets/imgs/graphicdesign/shadow_edge/habiba_screen_year3_002_0010.jpg';
+
 import Footer from '../Component/Footer';
 import FloatingButton from '../Component/Floatingbutton';
 
@@ -76,17 +87,31 @@ const ShadowEdgeProject = () => {
             </div>
 
             <div className="shadow-proof-card shadow-image-card">
-              <img src={shadow} alt="Shadow Edge Design 2" />
+              <img src={shadow2} alt="Shadow Edge Design 2" />
             </div>
 
             <div className="shadow-proof-card shadow-image-card">
-              <img src={shadow} alt="Shadow Edge Design 3" />
+              <img src={shadow3} alt="Shadow Edge Design 3" />
             </div>
 
             <div className="shadow-proof-card shadow-image-card">
-              <img src={shadow} alt="Shadow Edge Design 4" />
+              <img src={shadow4} alt="Shadow Edge Design 4" />
             </div>
-
+<div className="shadow-proof-card shadow-image-card">
+              <img src={shadow5} alt="Shadow Edge Design 4" />
+            </div><div className="shadow-proof-card shadow-image-card">
+              <img src={shadow6} alt="Shadow Edge Design 4" />
+            </div><div className="shadow-proof-card shadow-image-card">
+              <img src={shadow7} alt="Shadow Edge Design 4" />
+            </div><div className="shadow-proof-card shadow-image-card">
+              <img src={shadow8} alt="Shadow Edge Design 4" />
+            </div><div className="shadow-proof-card shadow-image-card">
+              <img src={shadow9} alt="Shadow Edge Design 4" />
+            </div><div className="shadow-proof-card shadow-image-card">
+              <img src={shadow10} alt="Shadow Edge Design 4" />
+            </div><div className="shadow-proof-card shadow-image-card">
+              <img src={shadow11} alt="Shadow Edge Design 4" />
+            </div>
           </div>
         </div>
       </div>
