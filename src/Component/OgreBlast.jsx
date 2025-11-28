@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './OgreBlast.css';
 import Navbar from '../Component/Navbar';
@@ -6,42 +6,88 @@ import leg from '../Assets/imgs/graphicdesign/posters/habiba_illustration_year1_
 import Footer from '../Component/Footer';
 import FloatingButton from '../Component/Floatingbutton';
 
-const Enviroment = () => {
+const Ogreblast = () => {
+  const scrollContainerRef = useRef(null);
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    const scrollContainer = scrollContainerRef.current;
+    const scrollWrapper = wrapperRef.current;
+
+    const updateHorizontalScroll = () => {
+      if (!scrollContainer || !scrollWrapper) return;
+
+      const cards = scrollContainer.querySelectorAll('.proof-card');
+      const totalCardsWidth = Array.from(cards).reduce((total, card) => {
+        return total + card.offsetWidth + 32;
+      }, 0);
+
+      const maxScroll = totalCardsWidth - window.innerWidth;
+      const wrapperTop = scrollWrapper.offsetTop;
+      const wrapperHeight = scrollWrapper.offsetHeight;
+      const scrollProgress = window.scrollY - wrapperTop;
+
+      console.log('Scroll Progress:', scrollProgress, 'Max Scroll:', maxScroll);
+
+      if (scrollProgress >= 0 && scrollProgress <= wrapperHeight - window.innerHeight) {
+        const progress = scrollProgress / (wrapperHeight - window.innerHeight);
+        const translateX = -progress * maxScroll;
+        scrollContainer.style.transform = `translateX(${translateX}px)`;
+      } else if (scrollProgress < 0) {
+        scrollContainer.style.transform = `translateX(0px)`;
+      } else {
+        scrollContainer.style.transform = `translateX(-${maxScroll}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', updateHorizontalScroll);
+    window.addEventListener('resize', updateHorizontalScroll);
+    updateHorizontalScroll();
+
+    return () => {
+      window.removeEventListener('scroll', updateHorizontalScroll);
+      window.removeEventListener('resize', updateHorizontalScroll);
+    };
+  }, []);
+
   return (
-    <div className="graphic-project-detail">
-      <div className="project-container">
-       <Navbar />
-        
-        <div className="project-content">
-          <div className="project-info">
-            <h1 className="project-title">Environmental Concept Art — “Human Impact”</h1>
-            
-            <p className="project-description">
-    This project is a hand-drawn digital illustration created in Adobe Photoshop, exploring the theme of human impact on the environment. The artwork depicts a person walking through a lush, green landscape that gradually deteriorates as a direct consequence of their actions. The transition from vibrant nature to damaged terrain visually represents how small, everyday choices can collectively harm the planet.  </p>
+    <>
+    <Navbar />
+    <div className="ogre-scroll-wrapper" ref={wrapperRef}>
+  <div className="ogre-horizontal-scroll-section">
+    <div className="ogre-scroll-container" ref={scrollContainerRef}>
+      
+      <div className="ogre-proof-card ogre-text-card">
+        <h1 className="ogre-project-title">Environmental Concept Art</h1>
 
-            <p className="project-description">
-     The piece combines expressive brushwork with atmospheric lighting to enhance the emotional tone. Subtle textures, layered shading, and controlled color shifts were used to show the contrast between life and decay. The concept emphasizes environmental awareness, urging viewers to consider their footprint and responsibility toward Earth. </p>
-             <p className="project-description">
-  This project highlights my skills in digital painting, environmental storytelling, composition, and visual symbolism, blending artistic expression with a meaningful message. </p></div>
+        <p className="ogre-project-description">
+          This project is a hand-drawn digital illustration created in Adobe Photoshop...
+        </p>
 
-          <div className="project-images">
-            <div className="project-image-wrapper">
-              <img 
-                src={leg} 
-                alt="enviroment Poster Design"
-                className="project-image"
-              />
-            </div>
-            
-           
-          </div>
-        </div>
       </div>
-   <FloatingButton />
-          <Footer />
-    </div>
 
+      <div className="ogre-proof-card ogre-image-card">
+        <img src={leg} alt="Environment Design 1" />
+      </div>
+
+      <div className="ogre-proof-card ogre-image-card">
+        <img src={leg} alt="Environment Design 2" />
+      </div>
+
+      <div className="ogre-proof-card ogre-image-card">
+        <img src={leg} alt="Environment Design 3" />
+      </div>
+
+      <div className="ogre-proof-card ogre-image-card">
+        <img src={leg} alt="Environment Design 4" />
+      </div>
+
+    </div>
+  </div>
+</div>
+<Footer />
+</>
   );
 };
 
-export default Enviroment;
+export default Ogreblast;

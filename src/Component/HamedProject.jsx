@@ -28,7 +28,7 @@ const HamedProject = () => {
             <div className="project-image-wrapper">
               <img 
                 src={hamed} 
-                alt="ASAP Poster Design"
+                alt="hamed Poster Design"
                 className="project-image"
               />
             </div>

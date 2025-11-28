@@ -6,12 +6,16 @@ import CaseStudyDetailsGiza from './Component/Casestudydetailsgiza';
 import AsapProject from './Component/AsapProject';
 import HamedProject from './Component/HamedProject';
 import Enviroment from './Component/Enviroment';
+import Ogreblast from './Component/OgreBlast';
+import ScrollToTop from './Component/ScrollToTop';
 
 
 const Routing = () => {
   return (
+    <>
+   
   <BrowserRouter>
-    
+     <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
               <Route path="/project/giza-zoo" element={<CaseStudyDetailsGiza />} />
@@ -19,8 +23,10 @@ const Routing = () => {
      <Route path="/asap-project" element={<AsapProject />} />
           <Route path="/Hamed-project" element={<HamedProject />} />
            <Route path="/leg-project" element={<Enviroment />} />
+   <Route path="/ogre-project" element={<Ogreblast />} />
       </Routes>
    </BrowserRouter>
+   </>
   );
 };
 
