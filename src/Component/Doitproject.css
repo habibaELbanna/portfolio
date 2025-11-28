@@ -1,5 +1,4 @@
 .doit-project-container {
-
   min-height: 100vh;
   padding-bottom: 60px;
 }
@@ -93,7 +92,7 @@
 .product-design-grid-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 341px 256px 288px;
+  grid-template-rows: auto auto auto;
   gap: 10px;
   max-width: 1400px;
   margin: 0 auto;
@@ -107,6 +106,8 @@
   transition: all 0.3s ease;
   overflow: hidden;
   position: relative;
+  padding: 20px;
+  min-height: 300px;
 }
 
 .product-design-box:hover {
@@ -116,9 +117,10 @@
 
 .product-design-box img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   display: block;
+  max-height: 500px;
 }
 
 .product-design-box.pd-box-1 {
@@ -231,53 +233,151 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+
+/* Tablet (Large) */
+@media (max-width: 1200px) {
   .proj_name {
-    font-size: 48px;
+    font-size: 80px;
   }
 
   .proj_title {
-    font-size: 20px;
+    font-size: 28px;
+  }
+
+  .middleab {
+    margin-left: 30px;
+  }
+
+  .proj_info1 {
+    padding: 0 10%;
+    font-size: 19px;
+  }
+
+  .proj_namephasebranding {
+    width: 60%;
+  }
+
+  .product-design-box {
+    padding: 18px;
+    min-height: 280px;
+  }
+
+  .product-design-box img {
+    max-height: 450px;
+  }
+}
+
+/* Tablet (Medium) */
+@media (max-width: 1024px) {
+  .proj_name {
+    font-size: 72px;
+  }
+
+  .proj_title {
+    font-size: 26px;
+    line-height: 1.4;
+  }
+
+  .middleab {
+    margin-left: 20px;
+    padding: 0 4%;
+  }
+
+  .project_logo1 {
+    width: 75%;
+  }
+
+  .proj_info1 {
+    padding: 0 8%;
+    font-size: 19px;
+  }
+
+  .proj_namephasebranding {
+    width: 70%;
+    font-size: 22px;
+  }
+
+  .product-design-grid-wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 12px;
+    padding: 0 4%;
+  }
+
+  .product-design-box {
+    padding: 20px;
+    min-height: auto;
+  }
+
+  .product-design-box img {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+  }
+
+  .banner-text {
+    font-size: 42px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .proj_name {
+    font-size: 72px;
+  }
+
+  .proj_title {
+    font-size: 26px;
+    line-height: 1.4;
   }
 
   .middleab {
     flex-direction: column;
     margin-left: 0;
-    padding: 0 3%;
+    padding: 0 5%;
+    gap: 40px;
+  }
+
+  .abitdiv {
+    width: 100%;
+  }
+
+  .videot {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .projjj {
+    width: 100%;
   }
 
   .project_logo1 {
-    width: 90%;
+    width: 80%;
   }
 
   .proj_info1 {
     padding: 0 5%;
-    font-size: 18px;
-  }
-
-  .proj_namephaseux {
-    font-size: 32px;
+    font-size: 20px;
+    text-align: left;
   }
 
   .proj_namephasebranding {
-    width: 80%;
-    font-size: 18px;
-    margin: 30px auto;
-  }
-
-  .branding {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .project_logodoit {
-    max-width: 90%;
-    margin-bottom: 20px;
+    width: 75%;
+    font-size: 22px;
+    margin: 40px auto;
   }
 
   .product-design-grid-wrapper {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
     gap: 15px;
+    padding: 0 5%;
+  }
+
+  .product-design-box {
+    padding: 20px;
+    min-height: auto;
   }
 
   .product-design-box.pd-box-1,
@@ -286,16 +386,206 @@
   .product-design-box.pd-box-4 {
     grid-column: 1;
     grid-row: auto;
-    min-height: 250px;
+  }
+
+  .product-design-box img {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    max-height: 500px;
   }
 
   .banner-text {
-    font-size: 32px;
+    font-size: 40px;
+  }
+
+  .logos_slide img {
+    margin: 0 30px;
+  }
+}
+
+/* Mobile (Large) */
+@media (max-width: 393px) {
+  .doit-project-container {
+    padding-bottom: 40px;
+  }
+
+  .proj_name {
+    font-size: 56px;
+    padding: 0 4%;
+    margin-top: 20px;
+  }
+
+  .proj_title {
+    font-size: 22px;
+    padding: 0 4%;
+    line-height: 1.4;
+  }
+
+  .videot {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .middleab {
+    flex-direction: column;
+    margin-left: 0;
+    margin-top: 30px;
+    padding: 0 4%;
+    gap: 30px;
+  }
+
+  .abitdiv {
+    width: 100%;
+  }
+
+  .projjj {
+    width: 100%;
+  }
+
+  .project_logo1 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .proj_info1 {
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  .proj_info1 br {
+    display: none;
+  }
+
+  .proj_namephaseux {
+    font-size: 36px;
+    padding: 0 4%;
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+
+  .proj_namephasebranding {
+    width: 90%;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 30px auto;
+    padding: 0 4%;
+  }
+
+  .branding {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 4%;
+  }
+
+  .project_logodoit {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .product-design-grid-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 15px;
+    padding: 0 4%;
+  }
+
+  .product-design-box {
+    min-height: auto;
+    height: auto;
+    padding: 20px;
+  }
+
+  .product-design-box.pd-box-1,
+  .product-design-box.pd-box-2,
+  .product-design-box.pd-box-3,
+  .product-design-box.pd-box-4 {
+    grid-column: 1;
+    grid-row: auto;
+    min-height: auto;
+  }
+
+  .product-design-box img {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+  }
+
+  .banner-container {
+    padding: 30px 0;
+  }
+
+  .banner-text {
+    font-size: 28px;
+    letter-spacing: 2px;
   }
 
   .ankh {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
+    margin: 0 15px;
+  }
+
+  .banner-item {
+    margin: 0 15px;
+  }
+
+  .logos {
+    padding: 40px 0;
+  }
+
+  .logos_slide img {
     margin: 0 20px;
+    max-width: 80px;
+    height: auto;
+  }
+}
+
+/* Mobile (Extra Small) */
+@media (max-width: 375px) {
+  .proj_name {
+    font-size: 36px;
+  }
+
+  .proj_title {
+    font-size: 16px;
+  }
+
+  .proj_info1 {
+    font-size: 15px;
+  }
+
+  .proj_info1 span {
+    font-size: 32px !important;
+  }
+
+  .proj_namephaseux {
+    font-size: 24px;
+  }
+
+  .proj_namephasebranding {
+    font-size: 15px;
+  }
+
+  .banner-text {
+    font-size: 18px;
+  }
+
+  .product-design-box.pd-box-1,
+  .product-design-box.pd-box-2,
+  .product-design-box.pd-box-3,
+  .product-design-box.pd-box-4 {
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .product-design-box img {
+    max-height: 400px;
   }
 }
