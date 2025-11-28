@@ -11,6 +11,7 @@ import ScrollToTop from './Component/ScrollToTop';
 import SonderProject from './Component/SonderProject';
 import ShadowEdgeProject from './Component/ShadowEdgeProject';
 import KemetProject from './Component/KemetProject';
+import RepairProject from './Component/RepairProject';
 
 
 const Routing = () => {
@@ -30,6 +31,7 @@ const Routing = () => {
    <Route path="/sonder-project" element={<SonderProject />} />
    <Route path="/shadow-project" element={<ShadowEdgeProject />} />
    <Route path="/project/1" element={<KemetProject />} />
+      <Route path="/project/2" element={<RepairProject/>} />
       </Routes>
    </BrowserRouter>
    </>
