@@ -32,7 +32,7 @@ const VortexProject = () => {
     <div className="vortex-project-container">
       <p className="vortex-proj_name">Vortex</p>
       <p className="vortex-proj_title">
-        An Immersive Journey Through Ancient Egypt
+      Vortex is an e-sports website designed for fast, energetic, and competitive experiences.
       </p>
 
       <div className="vortex-banner-container">
@@ -104,8 +104,7 @@ const VortexProject = () => {
           <p className="vortex-proj_info1">
             <span style={{ fontFamily: 'anton', fontSize: '50px' }}>about</span>
             <br />
-          Kemet is a narrative-driven website exploring over 3,000 years of Ancient Egyptian history. It combines accessible research with high-fidelity 3D models and interactive reconstructions, letting users virtually explore temples, tombs, and ancient cities.
-          </p>
+       Vortex is a dynamic e-sports platform built to bring gamers, teams, and fans together. It highlights tournaments, player stats, live updates, and community engagement—all in one competitive hub. </p>
         </div>
       </div>
 
@@ -118,8 +117,7 @@ const VortexProject = () => {
       </div>
 
       <p className="vortex-proj_namephasebranding">
-This branding section outlines the visual identity, using a blue and gold palette and a clear, historically inspired style. Custom dynasty icons serve as key visual elements, reinforcing both navigation and theme.
-</p>
+Vortex’s branding focuses on bold colors, high-energy visuals, and sharp geometric elements inspired by e-sports culture. Iconography and UI accents reinforce speed, competition, and intensity.</p>
 
       <h1 className="vortex-proj_namephaseux">03. Product Design</h1>
 
