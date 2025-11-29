@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './SofraProject.css';
 import logoSofra from '../Assets/imgs/casestudy/sofra.png';
+import uxSofra from '../Assets/imgs/sofra/uxsofra.png';
 import sofraVideo from '../Assets/imgs/sofra/sofra.mp4';
 import ankhIcon from '../Assets/imgs/ankh.svg';
 import brandColorSofra from '../Assets/imgs/sofra/brandcolorsofra.png';
@@ -30,9 +31,9 @@ const SofraProject = () => {
     <>
     <Nav />
     <div className="sofra-project-container">
-      <p className="sofra-proj_name">Sofra</p>
+      <p className="sofra-proj_name">Sofra savior</p>
       <p className="sofra-proj_title">
-        An Immersive Journey Through Ancient Egypt
+   Sofra suggests dishes based on your preferences and ingredients, giving you quick, simple recipes that make daily cooking easier.
       </p>
 
       <div className="sofra-banner-container">
@@ -104,10 +105,14 @@ const SofraProject = () => {
           <p className="sofra-proj_info1">
             <span style={{ fontFamily: 'anton', fontSize: '50px' }}>about</span>
             <br />
-          Kemet is a narrative-driven website exploring over 3,000 years of Ancient Egyptian history. It combines accessible research with high-fidelity 3D models and interactive reconstructions, letting users virtually explore temples, tombs, and ancient cities.
-          </p>
+      Sofra helps you decide what to cook every day by offering personalized meal ideas and easy-to-follow recipes. </p>
         </div>
       </div>
+ <p className="proj_namephaseux">01.The ux</p>
+
+      <img className="project_logo1" src={uxSofra} alt="UX Design" />
+      <p className="proj_namephasebranding">
+  This UX section outlines the research and design process behind Sofra, the daily meal-decision and recipe app. It highlights user insights, journey mapping, and user flow, showing how the app helps users decide what to cook, explore recipes, and plan meals through a simple, intuitive, and comforting experience.  </p>
 
     
       <p className="sofra-proj_namephaseux">02.The Branding</p>
@@ -118,8 +123,7 @@ const SofraProject = () => {
       </div>
 
       <p className="sofra-proj_namephasebranding">
-This branding section outlines the visual identity, using a blue and gold palette and a clear, historically inspired style. Custom dynasty icons serve as key visual elements, reinforcing both navigation and theme.
-</p>
+Sofra’s branding uses warm, inviting colors and friendly food-inspired icons to create a cozy, helpful cooking experience.</p>
 
       <h1 className="sofra-proj_namephaseux">03. Product Design</h1>
 
