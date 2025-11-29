@@ -14,6 +14,7 @@ import KemetProject from './Component/KemetProject';
 import RepairProject from './Component/RepairProject';
 import VortexProject from './Component/VortexProject';
 import PinkTaxiProject from './Component/PinkTaxiProject';
+import SofraProject from './Component/SofraProject';
 
 
 const Routing = () => {
@@ -36,6 +37,7 @@ const Routing = () => {
       <Route path="/project/2" element={<RepairProject/>} />
            <Route path="/project/6" element={<VortexProject />} />
                <Route path="/project/10" element={<PinkTaxiProject />} />
+           <Route path="/project/9" element={<SofraProject />} />      
       </Routes>
    </BrowserRouter>
    </>
