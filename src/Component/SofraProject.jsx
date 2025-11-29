@@ -4,13 +4,12 @@ import './SofraProject.css';
 import logoSofra from '../Assets/imgs/casestudy/sofra.png';
 import sofraVideo from '../Assets/imgs/sofra/sofra.mp4';
 import ankhIcon from '../Assets/imgs/ankh.svg';
-import uxSofra from '../Assets/imgs/sofra/uxsofra.png';
 import brandColorSofra from '../Assets/imgs/sofra/brandcolorsofra.png';
 import sofraStickers from '../Assets/imgs/sofra/sofrastickers.png';
 import loginSofra from '../Assets/imgs/sofra/loginsofra.png';
 import sofra33 from '../Assets/imgs/sofra/1.png';
-import sofra22 from '../Assets/imgs/sofra/13.png';
-import sofraa from '../Assets/imgs/sofra/10.png';
+import sofra22 from '../Assets/imgs/sofra/3.png';
+import sofraa from '../Assets/imgs/sofra/2.png';
 import logo1 from '../Assets/imgs/sofra/1.png';
 import logo2 from '../Assets/imgs/sofra/2.png';
 import logo3 from '../Assets/imgs/sofra/3.png';
@@ -18,14 +17,14 @@ import logo4 from '../Assets/imgs/sofra/4.png';
 import logo5 from '../Assets/imgs/sofra/5.png';
 import logo6 from '../Assets/imgs/sofra/6.png';
 import logo7 from '../Assets/imgs/sofra/7.png';
-import logo8 from '../Assets/imgs/sofra/8.png';
+
 import Nav from '../Component/Navbar';
 import Footer from '../Component/Footer';
 import FloatingButton from '../Component/Floatingbutton';
 
 const SofraProject = () => {
     
-  const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8];
+  const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7];
 
   return (
     <>

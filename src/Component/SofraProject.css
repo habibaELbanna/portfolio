@@ -143,9 +143,6 @@
   grid-row: 3;
 }
 
-.sofra-product-design-box.sofra-pd-img-contain img {
-  object-fit: cover;
-}
 
 .sofra-product-design-box.sofra-pd-img-containn img {
   object-fit: contain;
