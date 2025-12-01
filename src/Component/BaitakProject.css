@@ -1,0 +1,296 @@
+/* BaitakProject.css - corrected to match BaitakProject.jsx classNames */
+
+.baitak-project-container {
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+.baitak-proj_name {
+  font-family: "Oswald", sans-serif;
+  color: #ffff;
+  font-size: 96px;
+  padding: 0 5%;
+  margin-bottom: 0;
+}
+
+.baitak-proj_title {
+  font-family: "Oswald", sans-serif;
+  color: #ffff;
+  font-size: 30px;
+  padding: 0 5%;
+}
+
+/* Banner */
+.baitak-banner-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+  position: relative;
+}
+
+.baitak-banner-track {
+  display: flex;
+  width: fit-content;
+  animation: baitak-scroll 20s linear infinite;
+}
+
+@keyframes baitak-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.baitak-banner-content {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.baitak-banner-item {
+  display: flex;
+  align-items: center;
+  margin: 0 30px;
+}
+
+.baitak-banner-text {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: #204794;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.baitak-icon {
+  width: 48px;
+  height: 48px;
+  margin-left: 20px;
+}
+
+.baitak-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Middle / Intro */
+.baitak-middleab {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 5%;
+  margin-left: 60px;
+  margin-top: 60px;
+  gap: 24px;
+}
+
+.baitak-video-box {
+  width: 48%;
+}
+
+.baitak-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 6px;
+  margin-bottom: 80px;
+}
+
+.baitak-about {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+
+.baitak-logo {
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+}
+
+.baitak-about_text {
+  color: #ffff;
+  font-size: 20px;
+  padding: 0 0%;
+  font-family: "Oswald", sans-serif;
+  margin-top: 35px;
+  line-height: 1.5;
+}
+
+/* Section titles & branding */
+.baitak-section-title,
+.baitak-proj_namephaseux {
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 60px;
+  color: #ffff;
+  font-size: 48px;
+  padding: 0 5%;
+}
+
+.baitak-branding {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 24px;
+  padding: 0 5%;
+}
+
+.baitak-brand-img {
+  max-width: 45%;
+  height: auto;
+}
+
+.baitak-brand-desc,
+.baitak-proj_namephasebranding {
+  width: 50%;
+  font-family: "Oswald", sans-serif;
+  margin: 60px;
+  color: #ffff;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+/* Product design grid - matches JSX (baitak-product-grid and baitak-pd-box) */
+.baitak-product-grid,
+.baitak-product-design-grid-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 10px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.baitak-pd-box,
+.baitak-product-design-box {
+  border: 2px solid #204794;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  padding: 20px;
+  min-height: 300px;
+}
+
+.baitak-pd-box:hover,
+.baitak-product-design-box:hover {
+  border-color: #204794;
+  transform: scale(1.01);
+}
+
+.baitak-pd-box img,
+.baitak-product-design-box img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  max-height: 500px;
+}
+
+/* Layout variants (keep original grid placements if you want to pass specific boxes) */
+.baitak-pd-box-1 { grid-column: 1; grid-row: 1 / 3; }
+.baitak-pd-box-2 { grid-column: 2; grid-row: 1; }
+.baitak-pd-box-3 { grid-column: 2; grid-row: 2; }
+.baitak-pd-box-4 { grid-column: 1 / 3; grid-row: 3; }
+
+/* Logos Slider */
+.baitak-logos {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 60px 0;
+}
+
+@keyframes baitak-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+.baitak-logos_slide {
+  display: inline-block;
+  animation: 15s baitak-slide infinite linear;
+}
+
+.baitak-logos_slide img {
+  margin: 0 40px;
+}
+
+/* Responsive */
+
+/* Large tablet */
+@media (max-width: 1200px) {
+  .baitak-proj_name { font-size: 80px; }
+  .baitak-proj_title { font-size: 28px; }
+  .baitak-middleab { margin-left: 30px; }
+  .baitak-about_text { padding: 0 10%; font-size: 19px; }
+  .baitak-proj_namephasebranding { width: 60%; }
+  .baitak-pd-box { padding: 18px; min-height: 280px; }
+  .baitak-pd-box img { max-height: 450px; }
+}
+
+/* Medium tablet */
+@media (max-width: 1024px) {
+  .baitak-proj_name { font-size: 72px; }
+  .baitak-proj_title { font-size: 26px; line-height: 1.4; }
+  .baitak-middleab { margin-left: 20px; padding: 0 4%; gap: 18px; }
+  .baitak-logo { width: 75%; }
+  .baitak-about_text { padding: 0 8%; font-size: 19px; }
+  .baitak-proj_namephasebranding { width: 70%; font-size: 22px; }
+  .baitak-product-grid { grid-template-columns: 1fr 1fr; gap: 12px; padding: 0 4%; }
+  .baitak-pd-box img { max-height: 450px; }
+  .baitak-banner-text { font-size: 42px; }
+}
+
+/* Small tablet / mobile */
+@media (max-width: 768px) {
+  .baitak-proj_name { font-size: 72px; }
+  .baitak-proj_title { font-size: 26px; line-height: 1.4; }
+  .baitak-middleab { flex-direction: column; margin-left: 0; padding: 0 5%; gap: 40px; }
+  .baitak-video-box { width: 100%; }
+  .baitak-video { width: 100%; margin-bottom: 40px; }
+  .baitak-about { width: 100%; }
+  .baitak-logo { width: 80%; }
+  .baitak-about_text { padding: 0 5%; font-size: 20px; text-align: left; }
+  .baitak-proj_namephasebranding { width: 75%; font-size: 22px; margin: 40px auto; }
+  .baitak-product-grid { grid-template-columns: 1fr; gap: 15px; padding: 0 5%; }
+  .baitak-pd-box { padding: 20px; min-height: auto; }
+  .baitak-pd-box img { max-height: 500px; }
+  .baitak-banner-text { font-size: 40px; }
+  .baitak-logos_slide img { margin: 0 30px; }
+}
+
+/* Mobile large */
+@media (max-width: 393px) {
+  .baitak-project-container { padding-bottom: 40px; }
+  .baitak-proj_name { font-size: 56px; padding: 0 4%; margin-top: 20px; }
+  .baitak-proj_title { font-size: 22px; padding: 0 4%; line-height: 1.4; }
+  .baitak-video { width: 100%; margin-bottom: 30px; }
+  .baitak-middleab { flex-direction: column; margin-left: 0; margin-top: 30px; padding: 0 4%; gap: 30px; }
+  .baitak-logo { width: 100%; margin-bottom: 20px; }
+  .baitak-about_text { padding: 0; font-size: 18px; line-height: 1.6; margin-top: 20px; text-align: left; }
+  .baitak-proj_namephaseux { font-size: 36px; padding: 0 4%; margin-top: 40px; margin-bottom: 30px; }
+  .baitak-proj_namephasebranding { width: 90%; font-size: 18px; line-height: 1.6; margin: 30px auto; padding: 0 4%; }
+  .baitak-branding { flex-direction: column; align-items: center; gap: 20px; padding: 0 4%; }
+  .baitak-product-grid { grid-template-columns: 1fr; gap: 15px; padding: 0 4%; }
+  .baitak-pd-box { min-height: auto; height: auto; padding: 20px; }
+  .baitak-banner-container { padding: 30px 0; }
+  .baitak-banner-text { font-size: 28px; letter-spacing: 2px; }
+  .baitak-icon { width: 28px; height: 28px; margin-left: 12px; }
+  .baitak-banner-item { margin: 0 15px; }
+  .baitak-logos { padding: 40px 0; }
+  .baitak-logos_slide img { margin: 0 20px; max-width: 80px; height: auto; }
+}
+
+/* Mobile extra small */
+@media (max-width: 375px) {
+  .baitak-proj_name { font-size: 36px; }
+  .baitak-proj_title { font-size: 16px; }
+  .baitak-about_text { font-size: 15px; }
+  .baitak-about_text span { font-size: 32px !important; }
+  .baitak-proj_namephaseux { font-size: 24px; }
+  .baitak-proj_namephasebranding { font-size: 15px; }
+  .baitak-banner-text { font-size: 18px; }
+  .baitak-pd-box { min-height: auto; padding: 15px; }
+  .baitak-pd-box img { max-height: 400px; }
+}

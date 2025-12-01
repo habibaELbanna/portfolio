@@ -1,16 +1,16 @@
 import React from 'react';
 import './Casestudydetailsgiza.css';
-import zoo1 from '../Assets/vid/gizazoo.mp4';
+import zoo1 from '../Assets/imgs/coding/jewelss.mp4';
 import screenshot from '../Assets/imgs/coding/code.png';
-import screenshot2 from '../Assets/imgs/coding/giza1.png';
-import coding from '../Assets/imgs/coding/coding.png';
-import coding1 from '../Assets/imgs/coding/giza2.png';
-import zoo2 from '../Assets/imgs/coding/giza3.png';
+import screenshot2 from '../Assets/imgs/coding/jewels1.png';
+import coding from '../Assets/imgs/coding/jewels2.png';
+import coding1 from '../Assets/imgs/coding/jewels3.png';
+import zoo2 from '../Assets/imgs/coding/jewels4.png';
 import Footer from './Footer';
 import FloatingButton from './Floatingbutton';
 import Navbar from './Navbar';
 
-const CaseStudyDetailsGiza = ({ title, description, images }) => {
+const CaseStudyDetailsGlamour = ({ title, description, images }) => {
   // Default images if not provided
   const defaultImages = [
     { type: 'video', src: zoo1 },
@@ -62,7 +62,7 @@ const CaseStudyDetailsGiza = ({ title, description, images }) => {
       <div className="fixed-content-section">
         <div className="text-content-wrapper">
           <h1 className="text-content-wrapper">
-            {title || "Giza Zoo"}
+            {title || "Glamour"}
           </h1>
           <p>
             {description || (
@@ -84,4 +84,4 @@ const CaseStudyDetailsGiza = ({ title, description, images }) => {
   );
 };
 
-export default CaseStudyDetailsGiza;
+export default CaseStudyDetailsGlamour;

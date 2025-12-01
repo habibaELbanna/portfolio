@@ -1,25 +1,25 @@
 /* Main Container */
-.split-layout-container {
+.harrypotter-split-layout-container {
   display: flex;
   min-height: 100vh;
 }
 
 /* Left Side - Scrolling Gallery */
-.scrolling-gallery-section {
+.harrypotter-scrolling-gallery-section {
   flex: 1;
   padding: 40px;
   margin-top: 89px;
 }
 
 /* Gallery Grid */
-.image-grid-gallery {
+.harrypotter-image-grid-gallery {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: minmax(200px, auto);
 }
 
-.gallery-box-item {
+.harrypotter-gallery-box-item {
   border: 2px solid #4a9eff;
   background-color: #0f0f0f;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -30,39 +30,39 @@
   background-repeat: no-repeat;
 }
 
-.gallery-box-item:nth-child(1) {
+.harrypotter-gallery-box-item:nth-child(1) {
   grid-column: 1 / -1;
   min-height: 400px;
 }
 
-.gallery-box-item:nth-child(2) {
+.harrypotter-gallery-box-item:nth-child(2) {
   min-height: 350px;
 }
 
-.gallery-box-item:nth-child(3) {
+.harrypotter-gallery-box-item:nth-child(3) {
   min-height: 350px;
 }
 
-.gallery-box-item:nth-child(4) {
+.harrypotter-gallery-box-item:nth-child(4) {
   min-height: 250px;
 }
 
-.gallery-box-item:nth-child(5) {
+.harrypotter-gallery-box-item:nth-child(5) {
   min-height: 250px;
 }
 
-.gallery-box-item:nth-child(6) {
+.harrypotter-gallery-box-item:nth-child(6) {
   grid-column: 1 / -1;
   min-height: 400px;
 }
 
-.gallery-box-item:hover {
+.harrypotter-gallery-box-item:hover {
   transform: scale(1.02);
   box-shadow: 0 0 20px rgba(74, 158, 255, 0.5);
 }
 
 /* Right Side - Fixed Content */
-.fixed-content-section {
+.harrypotter-fixed-content-section {
   flex: 1;
   padding: 60px;
   display: flex;
@@ -71,10 +71,9 @@
   position: sticky;
   top: 0;
   align-self: flex-start;
-  
 }
 
-.text-content-wrapper h1 {
+.harrypotter-text-content-wrapper h1 {
   font-size: 64px;
   font-weight: bold;
   margin-bottom: 30px;
@@ -82,7 +81,7 @@
   color: #cccccc;
 }
 
-.text-content-wrapper p {
+.harrypotter-text-content-wrapper p {
   font-size: 18px;
   line-height: 1.8;
   color: #cccccc;
@@ -91,43 +90,43 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .split-layout-container {
+  .harrypotter-split-layout-container {
     flex-direction: column;
   }
 
-  .fixed-content-section {
+  .harrypotter-fixed-content-section {
     position: relative;
     height: auto;
   }
 
-  .text-content-wrapper h1 {
+  .harrypotter-text-content-wrapper h1 {
     font-size: 48px;
   }
 }
 
 @media (max-width: 768px) {
-  .scrolling-gallery-section {
+  .harrypotter-scrolling-gallery-section {
     padding: 20px;
   }
 
-  .fixed-content-section {
+  .harrypotter-fixed-content-section {
     padding: 40px 20px;
   }
 
-  .image-grid-gallery {
+  .harrypotter-image-grid-gallery {
     grid-template-columns: 1fr;
   }
 
-  .gallery-box-item:nth-child(1),
-  .gallery-box-item:nth-child(6) {
+  .harrypotter-gallery-box-item:nth-child(1),
+  .harrypotter-gallery-box-item:nth-child(6) {
     grid-column: 1;
   }
 
-  .text-content-wrapper h1 {
+  .harrypotter-text-content-wrapper h1 {
     font-size: 36px;
   }
 
-  .text-content-wrapper p {
+  .harrypotter-text-content-wrapper p {
     font-size: 16px;
   }
 }

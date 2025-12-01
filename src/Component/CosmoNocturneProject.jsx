@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './CosmoNocturneProject.css';
-import logoCosmoNocturne from '../Assets/imgs/casestudy/cosmonocturne.png';
+import logoCosmoNocturne from '../Assets/imgs/cosmonocturne/cosmonocturne.png';
 import cosmonocturneVideo from '../Assets/imgs/cosmonocturne/cosmonocturne.mp4';
 import ankhIcon from '../Assets/imgs/ankh.svg';
 import uxCosmoNocturne from '../Assets/imgs/cosmonocturne/uxcosmonocturne.png';
 import brandColorCosmoNocturne from '../Assets/imgs/cosmonocturne/brandcolorcosmonocturne.png';
-import cosmonocturneStickers from '../Assets/imgs/cosmonocturne/cosmonocturnestic kers.png';
+import cosmonocturneStickers from '../Assets/imgs/cosmonocturne/cosmonocturnestickers.png';
 import loginCosmoNocturne from '../Assets/imgs/cosmonocturne/logincosmonocturne.png';
 import cosmonocturne33 from '../Assets/imgs/cosmonocturne/1.png';
 import cosmonocturne22 from '../Assets/imgs/cosmonocturne/13.png';
@@ -33,7 +33,7 @@ const CosmoNocturneProject = () => {
     <div className="cosmonocturne-project-container">
       <p className="cosmonocturne-proj_name">Cosmo Nocturne</p>
       <p className="cosmonocturne-proj_title">
-        An Immersive Journey Through Ancient Egypt
+      Cosmo Nocturne blends storytelling, puzzles, and AR interaction to create a thrilling escape-room adventure.
       </p>
 
       <div className="cosmonocturne-banner-container">
@@ -105,12 +105,17 @@ const CosmoNocturneProject = () => {
           <p className="cosmonocturne-proj_info1">
             <span style={{ fontFamily: 'anton', fontSize: '50px' }}>about</span>
             <br />
-          Kemet is a narrative-driven website exploring over 3,000 years of Ancient Egyptian history. It combines accessible research with high-fidelity 3D models and interactive reconstructions, letting users virtually explore temples, tombs, and ancient cities.
-          </p>
+      Cosmo Nocturne is an AR escape-room experience where players solve puzzles, uncover clues, and navigate a mysterious sci-fi environment through immersive augmented reality.  </p>
         </div>
       </div>
 
+    <p className="proj_namephaseux">01.The ux</p>
     
+          <img className="project_logo1" src={uxCosmoNocturne} alt="UX Design" />
+          <p className="proj_namephasebranding">
+    This UX section outlines the research and design process behind Cosmo Nocturne, an AR escape-room experience. It highlights user insights, journey mapping, and user flow, showing how the game guides players through puzzles, clues, and interactive AR elements for an immersive, intuitive, and engaging escape adventure.  </p>
+    
+        
       <p className="cosmonocturne-proj_namephaseux">02.The Branding</p>
 
       <div className="cosmonocturne-branding">
@@ -119,8 +124,7 @@ const CosmoNocturneProject = () => {
       </div>
 
       <p className="cosmonocturne-proj_namephasebranding">
-This branding section outlines the visual identity, using a blue and gold palette and a clear, historically inspired style. Custom dynasty icons serve as key visual elements, reinforcing both navigation and theme.
-</p>
+Cosmo Nocturne’s branding uses dark cosmic tones, neon accents, and futuristic iconography to reflect its sci-fi mystery theme. Visual elements emphasize immersion, technology, and exploration.</p>
 
       <h1 className="cosmonocturne-proj_namephaseux">03. Product Design</h1>
 
