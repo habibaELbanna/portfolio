@@ -33,7 +33,6 @@ const CodingSection = () => {
       image: jewels,
       link: "/project/glamour",
     },
-    ,
     {
       id: 4,
       title: "Awareness",
@@ -41,7 +40,6 @@ const CodingSection = () => {
       image: aw,
       link: "/project/Awareness",
     },
-    
   ];
 
   const handleWorkHover = (workId) => {

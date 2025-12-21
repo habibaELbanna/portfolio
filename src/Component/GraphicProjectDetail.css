@@ -1,0 +1,233 @@
+/* Simple Layout Styles (for asap, hamed, leg) */
+.graphic-project-detail {
+  min-height: 100vh;
+  color: #ffffff;
+  padding: 2rem;
+}
+
+.project-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+.project-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.project-info {
+  position: sticky;
+  top: 120px;
+}
+
+.project-title {
+  font-size: 3rem;
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+  color: #204794;
+}
+
+.project-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #cccccc;
+  margin-bottom: 1.5rem;
+  white-space: pre-line;
+}
+
+.project-images {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.project-image-wrapper {
+  width: 100%;
+  border: 2px solid #204794;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-image-wrapper:hover {
+  transform: translateY(-5px);
+  border-color: #3d6bc6;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Horizontal Scroll Layout Styles (for ogre, sonder, shadow) */
+.project-scroll-wrapper {
+  height: 300vh;
+  position: relative;
+}
+
+.project-horizontal-scroll-section {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.project-scroll-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+  margin-top: 117px;
+}
+
+.project-proof-card {
+  flex-shrink: 0;
+  height: 80vh;
+  border-radius: 10px;
+}
+
+.project-text-card {
+  font-family: "Oswald", sans-serif;
+  min-width: 500px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 2rem;
+  color: #ffffff;
+  background: transparent;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
+}
+
+.project-text-card::-webkit-scrollbar {
+  display: none;
+}
+
+.project-detail-title {
+  font-size: 40px;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  color: #204794;
+}
+
+.project-detail-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #cccccc;
+  margin-bottom: 1.2rem;
+  white-space: pre-line;
+}
+
+.project-image-card {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  background: #000;
+}
+
+.project-image-card > img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+  display: block;
+}
+
+.project-image-card:hover > img {
+  filter: brightness(0.7);
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .project-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .project-info {
+    position: relative;
+    top: 0;
+  }
+
+  .project-title {
+    font-size: 2.5rem;
+  }
+
+  .project-scroll-wrapper {
+    height: 250vh;
+  }
+
+  .project-text-card {
+    min-width: 400px;
+    max-width: 400px;
+    padding: 1.5rem;
+  }
+
+  .project-detail-title {
+    font-size: 2rem;
+  }
+
+  .project-detail-description {
+    font-size: 0.9rem;
+  }
+
+  .project-proof-card {
+    height: 70vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .graphic-project-detail {
+    padding: 1rem;
+  }
+
+  .project-container {
+    padding-top: 80px;
+  }
+
+  .project-title {
+    font-size: 2rem;
+  }
+
+  .project-description {
+    font-size: 1rem;
+  }
+
+  .project-scroll-wrapper {
+    height: 200vh;
+  }
+
+  .project-text-card {
+    min-width: 300px;
+    max-width: 300px;
+    padding: 1.5rem;
+  }
+
+  .project-detail-title {
+    font-size: 1.8rem;
+  }
+
+  .project-detail-description {
+    font-size: 0.85rem;
+  }
+
+  .project-proof-card {
+    height: 60vh;
+  }
+}

@@ -1,0 +1,583 @@
+/* Base Container */
+.webdev-project-container {
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+.webdev-loading {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #fff;
+}
+
+/* Project Title */
+.webdev-proj-name {
+  font-family: "Oswald", sans-serif;
+  color: #ffff;
+  font-size: 96px;
+  padding: 0 5%;
+  margin-bottom: 0;
+}
+
+.webdev-proj-title {
+  font-family: "Oswald", sans-serif;
+  color: #ffff;
+  font-size: 30px;
+  padding: 0 5%;
+}
+
+/* Banner Animation */
+.webdev-banner-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+  position: relative;
+}
+
+.webdev-banner-track {
+  display: flex;
+  width: fit-content;
+  animation: webdev-scroll 20s linear infinite;
+}
+
+@keyframes webdev-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.webdev-banner-content {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.webdev-banner-item {
+  display: flex;
+  align-items: center;
+  margin: 0 30px;
+}
+
+.webdev-banner-text {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: #204794;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.webdev-ankh {
+  width: 48px;
+  height: 48px;
+  margin: 0 40px;
+}
+
+.webdev-ankh img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Video & About Section */
+.webdev-videot {
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 80px;
+  width: 97%;
+}
+
+.webdev-middleab {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 5%;
+  margin-left: 60px;
+  margin-top: 60px;
+}
+
+.webdev-projjj {
+  display: flex;
+  flex-direction: column;
+}
+
+.webdev-project-logo1 {
+  display: flex;
+  margin: 0 auto;
+  width: 70%;
+}
+
+.webdev-proj-info1 {
+  color: #ffff;
+  font-size: 20px;
+  padding: 0 15%;
+  font-family: "Oswald", sans-serif;
+  margin-top: 35px;
+}
+
+/* Section Titles */
+.webdev-proj-namephaseux {
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 60px;
+  color: #ffff;
+  font-size: 48px;
+  padding: 0 5%;
+}
+
+/* Branding Section */
+.webdev-branding {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.webdev-project-logokemet {
+  max-width: 45%;
+  height: auto;
+}
+
+.webdev-proj-namephasebranding {
+  width: 50%;
+  font-family: "Oswald", sans-serif;
+  margin: 60px;
+  color: #ffff;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+/* Product Design Grid */
+.webdev-product-design-grid-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 10px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.webdev-product-design-box {
+  border: 2px solid #204794;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  padding: 20px;
+  min-height: 300px;
+}
+
+.webdev-product-design-box:hover {
+  border-color: #204794;
+  transform: scale(1.01);
+}
+
+.webdev-product-design-box img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  max-height: 500px;
+}
+
+.webdev-product-design-box.webdev-pd-box-1 {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+
+.webdev-product-design-box.webdev-pd-box-2 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.webdev-product-design-box.webdev-pd-box-3 {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.webdev-product-design-box.webdev-pd-box-4 {
+  grid-column: 1 / 3;
+  grid-row: 3;
+}
+
+/* Logos Slider */
+.webdev-logos {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 60px 0;
+}
+
+@keyframes webdev-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.webdev-logos-slide {
+  display: inline-block;
+  animation: 15s webdev-slide infinite linear;
+}
+
+.webdev-logos-slide img {
+  margin: 0 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .webdev-proj-name {
+    font-size: 80px;
+  }
+
+  .webdev-proj-title {
+    font-size: 28px;
+  }
+
+  .webdev-middleab {
+    margin-left: 30px;
+  }
+
+  .webdev-proj-info1 {
+    padding: 0 10%;
+    font-size: 19px;
+  }
+
+  .webdev-proj-namephasebranding {
+    width: 60%;
+  }
+
+  .webdev-product-design-box {
+    padding: 18px;
+    min-height: 280px;
+  }
+
+  .webdev-product-design-box img {
+    max-height: 450px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .webdev-proj-name {
+    font-size: 72px;
+  }
+
+  .webdev-proj-title {
+    font-size: 26px;
+    line-height: 1.4;
+  }
+
+  .webdev-middleab {
+    margin-left: 20px;
+    padding: 0 4%;
+  }
+
+  .webdev-project-logo1 {
+    width: 75%;
+  }
+
+  .webdev-proj-info1 {
+    padding: 0 8%;
+    font-size: 19px;
+  }
+
+  .webdev-proj-namephasebranding {
+    width: 70%;
+    font-size: 22px;
+  }
+
+  .webdev-product-design-grid-wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 12px;
+    padding: 0 4%;
+  }
+
+  .webdev-product-design-box {
+    padding: 20px;
+    min-height: auto;
+  }
+
+  .webdev-product-design-box img {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+  }
+
+  .webdev-banner-text {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  .webdev-proj-name {
+    font-size: 72px;
+  }
+
+  .webdev-proj-title {
+    font-size: 26px;
+    line-height: 1.4;
+  }
+
+  .webdev-middleab {
+    flex-direction: column;
+    margin-left: 0;
+    padding: 0 5%;
+    gap: 40px;
+  }
+
+  .webdev-abitdiv {
+    width: 100%;
+  }
+
+  .webdev-videot {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .webdev-projjj {
+    width: 100%;
+  }
+
+  .webdev-project-logo1 {
+    width: 80%;
+  }
+
+  .webdev-proj-info1 {
+    padding: 0 5%;
+    font-size: 20px;
+    text-align: left;
+  }
+
+  .webdev-proj-namephasebranding {
+    width: 75%;
+    font-size: 22px;
+    margin: 40px auto;
+  }
+
+  .webdev-product-design-grid-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 15px;
+    padding: 0 5%;
+  }
+
+  .webdev-product-design-box {
+    padding: 20px;
+    min-height: auto;
+  }
+
+  .webdev-product-design-box.webdev-pd-box-1,
+  .webdev-product-design-box.webdev-pd-box-2,
+  .webdev-product-design-box.webdev-pd-box-3,
+  .webdev-product-design-box.webdev-pd-box-4 {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .webdev-product-design-box img {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+  }
+
+  .webdev-banner-text {
+    font-size: 40px;
+  }
+
+  .webdev-logos-slide img {
+    margin: 0 30px;
+  }
+}
+
+@media (max-width: 393px) {
+  .webdev-project-container {
+    padding-bottom: 40px;
+  }
+
+  .webdev-proj-name {
+    font-size: 56px;
+    padding: 0 4%;
+    margin-top: 20px;
+  }
+
+  .webdev-proj-title {
+    font-size: 22px;
+    padding: 0 4%;
+    line-height: 1.4;
+  }
+
+  .webdev-videot {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .webdev-middleab {
+    flex-direction: column;
+    margin-left: 0;
+    margin-top: 30px;
+    padding: 0 4%;
+    gap: 30px;
+  }
+
+  .webdev-abitdiv {
+    width: 100%;
+  }
+
+  .webdev-projjj {
+    width: 100%;
+  }
+
+  .webdev-project-logo1 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .webdev-proj-info1 {
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  .webdev-proj-info1 br {
+    display: none;
+  }
+
+  .webdev-proj-namephaseux {
+    font-size: 36px;
+    padding: 0 4%;
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+
+  .webdev-proj-namephasebranding {
+    width: 90%;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 30px auto;
+    padding: 0 4%;
+  }
+
+  .webdev-branding {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 4%;
+  }
+
+  .webdev-project-logokemet {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .webdev-product-design-grid-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 15px;
+    padding: 0 4%;
+  }
+
+  .webdev-product-design-box {
+    min-height: auto;
+    height: auto;
+    padding: 20px;
+  }
+
+  .webdev-product-design-box.webdev-pd-box-1,
+  .webdev-product-design-box.webdev-pd-box-2,
+  .webdev-product-design-box.webdev-pd-box-3,
+  .webdev-product-design-box.webdev-pd-box-4 {
+    grid-column: 1;
+    grid-row: auto;
+    min-height: auto;
+  }
+
+  .webdev-product-design-box img {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+  }
+
+  .webdev-banner-container {
+    padding: 30px 0;
+  }
+
+  .webdev-banner-text {
+    font-size: 28px;
+    letter-spacing: 2px;
+  }
+
+  .webdev-ankh {
+    width: 28px;
+    height: 28px;
+    margin: 0 15px;
+  }
+
+  .webdev-banner-item {
+    margin: 0 15px;
+  }
+
+  .webdev-logos {
+    padding: 40px 0;
+  }
+
+  .webdev-logos-slide img {
+    margin: 0 20px;
+    max-width: 80px;
+    height: auto;
+  }
+}
+
+@media (max-width: 375px) {
+  .webdev-proj-name {
+    font-size: 36px;
+  }
+
+  .webdev-proj-title {
+    font-size: 16px;
+  }
+
+  .webdev-proj-info1 {
+    font-size: 15px;
+  }
+
+  .webdev-proj-info1 span {
+    font-size: 32px !important;
+  }
+
+  .webdev-proj-namephaseux {
+    font-size: 24px;
+  }
+
+  .webdev-proj-namephasebranding {
+    font-size: 15px;
+  }
+
+  .webdev-banner-text {
+    font-size: 18px;
+  }
+
+  .webdev-product-design-box.webdev-pd-box-1,
+  .webdev-product-design-box.webdev-pd-box-2,
+  .webdev-product-design-box.webdev-pd-box-3,
+  .webdev-product-design-box.webdev-pd-box-4 {
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .webdev-product-design-box img {
+    max-height: 400px;
+  }
+}

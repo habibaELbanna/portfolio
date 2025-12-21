@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Contact.css';
-
+import {supabase} from "../Supabase";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -16,12 +16,16 @@ const Contact = () => {
       [name]: value
     }));
   };
+  async function sendMsg(){
+    const res = await supabase.from("contactus").insert({"Name":formData.name,"Email":formData.email,"Subject":formData.subject,"Message":formData.message});
 
-  const handleSubmit = (e) => {
+  }
+  const handleSubmit =  (e) => { 
+    
     e.preventDefault();
-    // Add your form submission logic here
-    console.log('Form submitted:', formData);
-    // Reset form after submission
+  
+    // console.log('Form submitted:', formData);
+ 
     setFormData({
       name: '',
       email: '',
@@ -111,7 +115,7 @@ const Contact = () => {
             />
           </div>
 
-          <button type="submit" className="elbanna-send-button">Send Message</button>
+          <button onClick={sendMsg} type="submit" className="elbanna-send-button">Send Message</button>
         </form>
       </div>
     </div>

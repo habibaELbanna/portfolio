@@ -1,0 +1,232 @@
+import React, { useEffect, useState } from 'react';
+import { useParams, Navigate } from 'react-router-dom';
+import { supabase } from '../Supabase';
+import './WebDevProjectDetail.css';
+import Nav from './Navbar';
+import Footer from './Footer';
+import FloatingButton from './Floatingbutton';
+import ankhIcon from '../Assets/imgs/ankh.svg';
+
+const WebDevProjectDetail = () => {
+  const { projectId } = useParams();
+  const [projectData, setProjectData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchProjectData() {
+      try {
+        // Fetch project from Supabase
+        const { data: project, error: projectError } = await supabase
+          .from('Projects')
+          .select('*')
+          .eq('slug', projectId)
+          .single();
+
+        if (projectError) throw projectError;
+
+        if (project) {
+          console.log('✅ PROJECT FROM SUPABASE:', project);
+          
+          // Build sections array from your existing jsonb columns
+          const sections = [];
+
+          // Add UX section if it exists
+          if (project.The_ux && project.The_ux.project_image) {
+            sections.push({
+              type: 'ux',
+              title: '01. The UX',
+              image: project.The_ux.project_image,
+              description: project.The_ux.image_caption || null
+            });
+          }
+
+          // Add Branding section if it exists
+          if (project.The_branding && project.The_branding.project_image) {
+            sections.push({
+              type: 'branding',
+              title: '02. The Branding',
+              images: [project.The_branding.project_image], // Single image in array
+              description: project.The_branding.image_caption || null
+            });
+          }
+
+          // Add Product Design section if it exists
+          if (project.Products) {
+            // Convert Products object to array of image URLs
+            const productImages = Object.keys(project.Products)
+              .filter(key => key.startsWith('image'))
+              .map(key => project.Products[key])
+              .filter(url => url); // Remove any null/undefined values
+
+            sections.push({
+              type: 'product',
+              title: '03. Product Design',
+              images: productImages
+            });
+          }
+
+          // Convert scroll_imgs object to array
+          let logos = [];
+          if (project.scroll_imgs) {
+            logos = Object.keys(project.scroll_imgs)
+              .filter(key => key.startsWith('image'))
+              .map(key => project.scroll_imgs[key])
+              .filter(url => url); // Remove any null/undefined values
+          }
+
+          // Format the data
+          setProjectData({
+            Title: project.Title,
+            name: project.Title,
+            title: project.project_description,
+            project_description: project.project_description,
+            about: project.About_Project,
+            Hero_image: project.Hero_image,
+            hero_video: project.hero_video,
+            bannerItems: Array.isArray(project.banner_items) ? project.banner_items : ["DESIGN", "BRANDING", "UX/UI"],
+            sections: sections,
+            logos: logos
+          });
+        }
+      } catch (error) {
+        console.error('Error fetching project:', error);
+        setProjectData(null);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchProjectData();
+  }, [projectId]);
+
+  if (loading) {
+    return (
+      <>
+        <Nav />
+        <div className="webdev-loading">Loading project...</div>
+        <Footer />
+      </>
+    );
+  }
+
+  if (!projectData) {
+    return <Navigate to="/" replace />;
+  }
+
+  const project = projectData;
+
+  return (
+    <>
+      <Nav />
+      <div className="webdev-project-container">
+        {/* Project Name & Title */}
+        <p className="webdev-proj-name">{project.Title}</p>
+        <p className="webdev-proj-title">{project.project_description}</p>
+
+        {/* Banner */}
+        <div className="webdev-banner-container">
+          <div className="webdev-banner-track">
+            {[1, 2].map((set) => (
+              <div key={set} className="webdev-banner-content">
+                {project.bannerItems.map((item, index) => (
+                  <div key={index} className="webdev-banner-item">
+                    <span className="webdev-banner-text">{item}</span>
+                    <span className="webdev-ankh">
+                      <img src={ankhIcon} alt="icon" />
+                    </span>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Video & About Section */}
+        <div className="webdev-middleab">
+          <div className="webdev-abitdiv">
+            {project.hero_video && (
+              <video className="webdev-videot" autoPlay muted loop playsInline>
+                <source src={project.hero_video} type="video/mp4" />
+              </video>
+            )}
+          </div>
+          <div className="webdev-projjj">
+            {project.Hero_image && (
+              <img className="webdev-project-logo1" src={project.Hero_image} alt={`${project.Title} Logo`} />
+            )}
+            <p className="webdev-proj-info1">
+              <span style={{ fontFamily: 'anton', fontSize: '50px' }}>about</span>
+              <br />
+              {project.about}
+            </p>
+          </div>
+        </div>
+
+        {/* Dynamic Sections */}
+        {project.sections && project.sections.length > 0 && project.sections.map((section, index) => (
+          <div key={index}>
+            {section.type === 'ux' && section.image && (
+              <>
+                <p className="webdev-proj-namephaseux">{section.title}</p>
+                <img className="webdev-project-logo1" src={section.image} alt="UX Design" />
+                {section.description && (
+                  <p className="webdev-proj-namephasebranding">{section.description}</p>
+                )}
+              </>
+            )}
+
+            {section.type === 'branding' && (
+              <>
+                <p className="webdev-proj-namephaseux">{section.title}</p>
+                <div className="webdev-branding">
+                  {Array.isArray(section.images) && section.images.map((img, imgIndex) => (
+                    <img key={imgIndex} className="webdev-project-logokemet" src={img} alt={`Branding ${imgIndex + 1}`} />
+                  ))}
+                </div>
+                {section.description && (
+                  <p className="webdev-proj-namephasebranding">{section.description}</p>
+                )}
+              </>
+            )}
+
+            {section.type === 'product' && (
+              <>
+                <h1 className="webdev-proj-namephaseux">{section.title}</h1>
+                <div className="webdev-product-design-grid-wrapper">
+                  {Array.isArray(section.images) && section.images.slice(0, 4).map((img, imgIndex) => (
+                    <div
+                      key={imgIndex}
+                      className={`webdev-product-design-box webdev-pd-box-${imgIndex + 1} webdev-pd-img-contain`}
+                    >
+                      <img src={img} alt={`Product Design ${imgIndex + 1}`} />
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+        ))}
+
+        {/* Logos Slider */}
+        {project.logos && project.logos.length > 0 && (
+          <div className="webdev-logos">
+            <div className="webdev-logos-slide">
+              {project.logos.map((logo, index) => (
+                <img key={`logo-set1-${index}`} src={logo} alt={`Logo ${index + 1}`} />
+              ))}
+            </div>
+            <div className="webdev-logos-slide">
+              {project.logos.map((logo, index) => (
+                <img key={`logo-set2-${index}`} src={logo} alt={`Logo ${index + 1}`} />
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+      <FloatingButton />
+      <Footer />
+    </>
+  );
+};
+
+export default WebDevProjectDetail;

@@ -2,6 +2,9 @@ import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import './Casestudy.css';
+import { webDevProjects } from '../data/webDevProjectsData';
+
+// Keep your existing imports for images/videos
 import doit from '../Assets/imgs/casestudy/logodoit.svg'
 import vortex from '../Assets/imgs/casestudy/vortexlogo.svg'
 import cosmo from '../Assets/imgs/casestudy/cosmo.png'
@@ -23,80 +26,81 @@ const Casestudy = () => {
       title: "Do It",
       category: "branding",
       image: doit,
-      link: "/project/doit"
+      link: "/webapp-project/doit" // Updated link
     },
     {
       id: 1,
       title: "Kemet",
       category: "branding",
       image: kemet,
-      link: "/project/1"
+      link: "/webapp-project/kemet" // Updated link
     },
     {
       id: 2,
       title: "Phone Design",
       category: "product design",
       image: phone,
-      link: "/project/2"
+      link: "/webapp-project/repair" // Updated link
     },
     {
       id: 3,
       title: "Cosmo",
       category: "branding",
       image: cosmo,
-      link: "/project/3"
+      link: "/webapp-project/cosmonocturne" // Updated link
     },
     {
       id: 4,
       title: "BIO",
       category: "branding",
       image: bio,
-      link: "/project/4"
+      link: "/webapp-project/biopulse" // Updated link
     },
     {
       id: 5,
       title: "Perfume",
       category: "product design",
       image: perfume,
-      link: "/project/5"
+      link: "/webapp-project/nefirtium" // Updated link
     },
     {
       id: 6,
       title: "Vortex",
       category: "branding",
       image: vortex,
-      link: "/project/6"
+      link: "/webapp-project/vortex" // Updated link
     },
     {
       id: 7,
       title: "Real Estate",
       category: "web design",
       image: real,
-      link: "/project/7"
+      link: "/webapp-project/baitak" // Updated link
     },
     {
       id: 8,
       title: "Giza Zoo",
       category: "web design",
       video: giza,
-      link: "/project/8"
+      link: "/webapp-project/gizazoo" // Updated link
     },
     {
       id: 9,
       title: "Sofra",
       category: "branding",
       image: sofra,
-      link: "/project/9"
+      link: "/webapp-project/sofra" // Updated link
     },
     {
       id: 10,
       title: "Pink Project",
       category: "design",
       image: pink,
-      link: "/project/10"
+      link: "/webapp-project/pinktaxi" // Updated link
     }
   ];
 
+  // Keep all your existing useEffect and animation code
   const handleWorkHover = (workId) => {
     setActiveWork(workId);
   };

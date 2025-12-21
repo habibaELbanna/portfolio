@@ -1,61 +1,20 @@
 import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Graphicdesign.css';
-import asap from '../Assets/imgs/graphicdesign/posters/asap.jpg'
-import hamed from '../Assets/imgs/graphicdesign/posters/hamed.jpg'
-import leg from '../Assets/imgs/graphicdesign/posters/habiba_illustration_year1_003.jpg'
-import shadow from '../Assets/imgs/graphicdesign/shadow_edge/header.jpg'
-import sonder from '../Assets/imgs/graphicdesign/sonder/header.jpg'
-import ogre from '../Assets/imgs/graphicdesign/ogre_blast/header.jpg'
+import { graphicProjects } from '../data/graphicProjectsData';
 
 const Graphicdesign = () => {
   const scrollContainerRef = useRef(null);
   const wrapperRef = useRef(null);
 
-  const projects = [
-    {
-      id: 0,
-      title: "ASAP",
-      category: "poster design",
-      image: asap,
-      link: "/asap-project"
-    },
-    {
-      id: 1,
-      title: "Hamed",
-      category: "poster design",
-      image: hamed,
-      link: "/hamed-project"
-    },
-    {
-      id: 2,
-      title: "Leg Illustration",
-      category: "illustration",
-      image: leg,
-      link: "/leg-project"
-    },
-    {
-      id: 3,
-      title: "Ogre Blast",
-      category: "graphic design",
-      image: ogre,
-      link: "/ogre-project"
-    },
-    {
-      id: 4,
-      title: "Sonder",
-      category: "graphic design",
-      image: sonder,
-      link: "/sonder-project"
-    },
-    {
-      id: 5,
-      title: "Shadow Edge",
-      category: "graphic design",
-      image: shadow,
-      link: "/shadow-project"
-    }
-  ];
+
+  const projectsList = Object.keys(graphicProjects).map(key => ({
+    id: key,
+    title: graphicProjects[key].title.split('—')[0].trim(),
+    category: graphicProjects[key].category,
+    image: graphicProjects[key].headerImage,
+    link: `/graphic-project/${key}` 
+  }));
 
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
@@ -103,7 +62,8 @@ const Graphicdesign = () => {
             <h1>THE<br /> Graphic<br /> design</h1>
           </div>
 
-          {projects.map((project) => (
+       
+          {projectsList.map((project) => (
             <Link 
               key={project.id} 
               to={project.link}
@@ -111,8 +71,7 @@ const Graphicdesign = () => {
             >
               <div className="proof-card image-card">
                 <img src={project.image} alt={project.title} />
-                <div className="image-overlay">
-                </div>
+                <div className="image-overlay"></div>
               </div>
             </Link>
           ))}
