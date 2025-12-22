@@ -6,7 +6,7 @@ import './CasestudydetailsHarryPotter.css';
 import Nav from './Navbar';
 import Footer from './Footer';
 import FloatingButton from './Floatingbutton';
-import { caseStudies } from '../data/caseStudiesData';
+
 
 const CaseStudyDetail = () => {
   const { caseStudyId } = useParams();

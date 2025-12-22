@@ -15,7 +15,7 @@ const WebDevProjectDetail = () => {
   useEffect(() => {
     async function fetchProjectData() {
       try {
-        // Fetch project from Supabase
+ 
         const { data: project, error: projectError } = await supabase
           .from('Projects')
           .select('*')
@@ -26,37 +26,35 @@ const WebDevProjectDetail = () => {
 
         if (project) {
           console.log('✅ PROJECT FROM SUPABASE:', project);
-          
-          // Build sections array from your existing jsonb columns
+        
           const sections = [];
 
-          // Add UX section if it exists
-          if (project.The_ux && project.The_ux.project_image) {
+        
+          if (project.the_ux && project.the_ux.project_image) {
             sections.push({
               type: 'ux',
               title: '01. The UX',
-              image: project.The_ux.project_image,
-              description: project.The_ux.image_caption || null
+              images: project.the_ux.project_image,
+              description: project.the_ux.image_caption || null
             });
           }
 
-          // Add Branding section if it exists
-          if (project.The_branding && project.The_branding.project_image) {
+          if (project.the_branding && project.the_branding.project_image) {
             sections.push({
               type: 'branding',
               title: '02. The Branding',
-              images: [project.The_branding.project_image], // Single image in array
-              description: project.The_branding.image_caption || null
+              images: [project.the_branding.project_image],
+              description: project.the_branding.image_caption || null
             });
           }
 
-          // Add Product Design section if it exists
+       
           if (project.Products) {
-            // Convert Products object to array of image URLs
+           
             const productImages = Object.keys(project.Products)
               .filter(key => key.startsWith('image'))
               .map(key => project.Products[key])
-              .filter(url => url); // Remove any null/undefined values
+              .filter(url => url); 
 
             sections.push({
               type: 'product',
@@ -65,16 +63,17 @@ const WebDevProjectDetail = () => {
             });
           }
 
-          // Convert scroll_imgs object to array
+         
           let logos = [];
           if (project.scroll_imgs) {
             logos = Object.keys(project.scroll_imgs)
               .filter(key => key.startsWith('image'))
               .map(key => project.scroll_imgs[key])
-              .filter(url => url); // Remove any null/undefined values
+              .filter(url => url); 
           }
+          console.log(sections)
 
-          // Format the data
+          
           setProjectData({
             Title: project.Title,
             name: project.Title,
@@ -119,11 +118,11 @@ const WebDevProjectDetail = () => {
     <>
       <Nav />
       <div className="webdev-project-container">
-        {/* Project Name & Title */}
+     
         <p className="webdev-proj-name">{project.Title}</p>
         <p className="webdev-proj-title">{project.project_description}</p>
 
-        {/* Banner */}
+     
         <div className="webdev-banner-container">
           <div className="webdev-banner-track">
             {[1, 2].map((set) => (
@@ -141,7 +140,7 @@ const WebDevProjectDetail = () => {
           </div>
         </div>
 
-        {/* Video & About Section */}
+       
         <div className="webdev-middleab">
           <div className="webdev-abitdiv">
             {project.hero_video && (
@@ -162,13 +161,17 @@ const WebDevProjectDetail = () => {
           </div>
         </div>
 
-        {/* Dynamic Sections */}
-        {project.sections && project.sections.length > 0 && project.sections.map((section, index) => (
+   
+        {console.log("-------------")}
+        {/* {project.sections && project.sections.length > 0 && project.sections.map((section, index) => (
           <div key={index}>
             {section.type === 'ux' && section.image && (
               <>
                 <p className="webdev-proj-namephaseux">{section.title}</p>
-                <img className="webdev-project-logo1" src={section.image} alt="UX Design" />
+                {section.image.map((img)=>{
+                  return <p>00000</p>
+
+                })}
                 {section.description && (
                   <p className="webdev-proj-namephasebranding">{section.description}</p>
                 )}
@@ -205,9 +208,30 @@ const WebDevProjectDetail = () => {
               </>
             )}
           </div>
-        ))}
+        ))} */}
 
-        {/* Logos Slider */}
+        {project.sections.map((e)=>{
+          console.log("-------")
+
+          console.log(e)
+          return <>
+<p className="webdev-proj-namephaseux">{e.title}</p>          
+<div className="webdev-product-design-grid-wrapper">
+{e.images.map((img,i)=>{
+                   return       <div className={`webdev-product-design-box webdev-pd-box-${i + 1} webdev-pd-img-contain`}>
+                      <img alt="Login Form Design" src={img} />
+                      </div>
+                   
+                   
+                   
+                  })}
+                  </div>
+
+                  <p className="webdev-proj-namephasebranding">{e.description}</p>
+
+</>
+        })}
+
         {project.logos && project.logos.length > 0 && (
           <div className="webdev-logos">
             <div className="webdev-logos-slide">

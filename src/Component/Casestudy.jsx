@@ -16,89 +16,91 @@ import bio from '../Assets/imgs/casestudy/BIO.png'
 import sofra from '../Assets/imgs/casestudy/sofra.png'
 import kemet from '../Assets/imgs/casestudy/kemet.png'
 import pink from '../Assets/imgs/casestudy/pinnk.png'
+import { supabase } from '../Supabase';
 
 const Casestudy = () => {
+  const [loading, setLoading] = useState(true);
   const [activeWork, setActiveWork] = useState(0);
-
-  const projects = [
-    {
-      id: 0,
-      title: "Do It",
-      category: "branding",
-      image: doit,
-      link: "/webapp-project/doit" // Updated link
-    },
-    {
-      id: 1,
-      title: "Kemet",
-      category: "branding",
-      image: kemet,
-      link: "/webapp-project/kemet" // Updated link
-    },
-    {
-      id: 2,
-      title: "Phone Design",
-      category: "product design",
-      image: phone,
-      link: "/webapp-project/repair" // Updated link
-    },
-    {
-      id: 3,
-      title: "Cosmo",
-      category: "branding",
-      image: cosmo,
-      link: "/webapp-project/cosmonocturne" // Updated link
-    },
-    {
-      id: 4,
-      title: "BIO",
-      category: "branding",
-      image: bio,
-      link: "/webapp-project/biopulse" // Updated link
-    },
-    {
-      id: 5,
-      title: "Perfume",
-      category: "product design",
-      image: perfume,
-      link: "/webapp-project/nefirtium" // Updated link
-    },
-    {
-      id: 6,
-      title: "Vortex",
-      category: "branding",
-      image: vortex,
-      link: "/webapp-project/vortex" // Updated link
-    },
-    {
-      id: 7,
-      title: "Real Estate",
-      category: "web design",
-      image: real,
-      link: "/webapp-project/baitak" // Updated link
-    },
-    {
-      id: 8,
-      title: "Giza Zoo",
-      category: "web design",
-      video: giza,
-      link: "/webapp-project/gizazoo" // Updated link
-    },
-    {
-      id: 9,
-      title: "Sofra",
-      category: "branding",
-      image: sofra,
-      link: "/webapp-project/sofra" // Updated link
-    },
-    {
-      id: 10,
-      title: "Pink Project",
-      category: "design",
-      image: pink,
-      link: "/webapp-project/pinktaxi" // Updated link
-    }
-  ];
+  const [projects,setProjects] = useState("");
+  // const projects = [
+  //   {
+  //     id: 0,
+  //     title: "Do It",
+  //     category: "branding",
+  //     image: doit,
+  //     link: "/webapp-project/doit" // Updated link
+  //   },
+  //   {
+  //     id: 1,
+  //     title: "Kemet",
+  //     category: "branding",
+  //     image: kemet,
+  //     link: "/webapp-project/kemet" // Updated link
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Phone Design",
+  //     category: "product design",
+  //     image: phone,
+  //     link: "/webapp-project/repair" // Updated link
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Cosmo",
+  //     category: "branding",
+  //     image: cosmo,
+  //     link: "/webapp-project/cosmo" // Updated link
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "BIO",
+  //     category: "branding",
+  //     image: bio,
+  //     link: "/webapp-project/biopulse" // Updated link
+  //   },
+  //   {
+  //     id: 5,
+  //     title: "Perfume",
+  //     category: "product design",
+  //     image: perfume,
+  //     link: "/webapp-project/nefirtium" // Updated link
+  //   },
+  //   {
+  //     id: 6,
+  //     title: "Vortex",
+  //     category: "branding",
+  //     image: vortex,
+  //     link: "/webapp-project/vortex" // Updated link
+  //   },
+  //   {
+  //     id: 7,
+  //     title: "Real Estate",
+  //     category: "web design",
+  //     image: real,
+  //     link: "/webapp-project/baitak" // Updated link
+  //   },
+  //   {
+  //     id: 8,
+  //     title: "Giza Zoo",
+  //     category: "web design",
+  //     video: giza,
+  //     link: "/webapp-project/gizazoo" // Updated link
+  //   },
+  //   {
+  //     id: 9,
+  //     title: "Sofra",
+  //     category: "branding",
+  //     image: sofra,
+  //     link: "/webapp-project/sofra" // Updated link
+  //   },
+  //   {
+  //     id: 10,
+  //     title: "Pink Project",
+  //     category: "design",
+  //     image: pink,
+  //     link: "/webapp-project/pinktaxi" // Updated link
+  //   }
+  // ];
 
   // Keep all your existing useEffect and animation code
   const handleWorkHover = (workId) => {
@@ -145,6 +147,18 @@ const Casestudy = () => {
   };
 
   useEffect(() => {
+
+async function callAPI(params) {
+  const res = await supabase.from("Projects").select("id,Hero_image,slug").eq("section_type","webapp");
+  
+  setProjects(res.data);
+  setLoading(false);
+}
+
+callAPI();
+
+
+
     const container = containerRef.current;
     const overlay = overlayRef.current;
     const fade = fadeRef.current;
@@ -196,6 +210,7 @@ const Casestudy = () => {
         }
       });
     };
+
   }, []);
 
   const addToRefs = (el) => {
@@ -220,7 +235,7 @@ const Casestudy = () => {
     ];
     return cardClasses[index] || `card-${index + 1}`;
   };
-
+if (loading) return <p>Loading...</p>;
   return (
     <div ref={containerRef} className="bento-container">
       <div ref={overlayRef} className="bento-overlay"></div>
@@ -242,7 +257,7 @@ const Casestudy = () => {
             onMouseEnter={() => handleWorkHover(project.id)}
             ref={addToRefs}
           >
-            <Link to={project.link} style={{ textDecoration: 'none', display: 'block', width: '100%', height: '100%' }}>
+            <Link to={project.slug} style={{ textDecoration: 'none', display: 'block', width: '100%', height: '100%' }}>
               <div className="card-image-full">
                 {project.video ? (
                   <video
@@ -255,8 +270,8 @@ const Casestudy = () => {
                   />
                 ) : (
                   <img 
-                    src={project.image} 
-                    alt={project.title}
+                    src={project.Hero_image} 
+                    alt={project.slug}
                     className="card-img"
                   />
                 )}
