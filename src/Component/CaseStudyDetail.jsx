@@ -7,7 +7,6 @@ import Nav from './Navbar';
 import Footer from './Footer';
 import FloatingButton from './Floatingbutton';
 
-
 const CaseStudyDetail = () => {
   const { caseStudyId } = useParams();
   const [caseStudyData, setCaseStudyData] = useState(null);
@@ -16,7 +15,6 @@ const CaseStudyDetail = () => {
   useEffect(() => {
     async function fetchCaseStudyData() {
       try {
-        // Try to fetch from Supabase
         const { data, error } = await supabase
           .from('CaseStudies')
           .select('*')
@@ -27,20 +25,9 @@ const CaseStudyDetail = () => {
 
         if (data) {
           setCaseStudyData(data);
-        } else {
-          // Fallback to local data
-          const localCaseStudy = caseStudies[caseStudyId];
-          if (localCaseStudy) {
-            setCaseStudyData(localCaseStudy);
-          }
         }
       } catch (error) {
         console.error('Error fetching case study:', error);
-        // Use local data as fallback
-        const localCaseStudy = caseStudies[caseStudyId];
-        if (localCaseStudy) {
-          setCaseStudyData(localCaseStudy);
-        }
       } finally {
         setLoading(false);
       }
@@ -64,9 +51,9 @@ const CaseStudyDetail = () => {
   }
 
   const caseStudy = caseStudyData;
-  const cssPrefix = caseStudy.cssPrefix || 'default';
+  const cssPrefix = caseStudy.cssPrefix || caseStudy.css_prefix || 'default';
   
-  // Determine CSS class names based on prefix
+
   const containerClass = cssPrefix === 'harrypotter' 
     ? 'harrypotter-split-layout-container'
     : 'split-layout-container';
@@ -99,7 +86,7 @@ const CaseStudyDetail = () => {
     <>
       <Nav />
       <div className={containerClass}>
-        {/* Left Side - Scrolling Gallery */}
+
         <div className={galleryClass}>
           <div className={gridClass}>
             {caseStudy.images && caseStudy.images.map((item, index) => (
@@ -130,7 +117,7 @@ const CaseStudyDetail = () => {
           </div>
         </div>
 
-        {/* Right Side - Fixed Content */}
+      
         <div className={contentClass}>
           <div className={wrapperClass}>
             <h1 className={titleClass}>

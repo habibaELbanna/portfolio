@@ -1,20 +1,27 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Graphicdesign.css';
-
+import { supabase } from '../Supabase';
 
 const Graphicdesign = () => {
+  const [loading, setLoading] = useState(true);
+  const [projects, setProjects] = useState([]);
   const scrollContainerRef = useRef(null);
   const wrapperRef = useRef(null);
 
-
-  const projectsList = Object.keys(graphicProjects).map(key => ({
-    id: key,
-    title: graphicProjects[key].title.split('—')[0].trim(),
-    category: graphicProjects[key].category,
-    image: graphicProjects[key].headerImage,
-    link: `/graphic-project/${key}` 
-  }));
+  useEffect(() => {
+    async function callAPI() {
+      const res = await supabase
+        .from("Projects")
+        .select("id,Title,section_type,Hero_image,slug")
+        .eq("section_type", "graphic");
+      // console.log(res)
+      setProjects(res.data);
+      setLoading(false);
+    }
+    
+    callAPI();
+  }, []);
 
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
@@ -52,7 +59,9 @@ const Graphicdesign = () => {
       window.removeEventListener('scroll', updateHorizontalScroll);
       window.removeEventListener('resize', updateHorizontalScroll);
     };
-  }, []);
+  }, [projects]);
+
+  if (loading) return <p>Loading...</p>;
 
   return (
     <div className="scroll-wrapper" ref={wrapperRef}>
@@ -62,15 +71,14 @@ const Graphicdesign = () => {
             <h1>THE<br /> Graphic<br /> design</h1>
           </div>
 
-       
-          {projectsList.map((project) => (
+          {projects.map((project) => (
             <Link 
               key={project.id} 
-              to={project.link}
+              to={project.slug}
               style={{ textDecoration: 'none' }}
             >
               <div className="proof-card image-card">
-                <img src={project.image} alt={project.title} />
+                <img src={project.Hero_image} alt={project.slug} />
                 <div className="image-overlay"></div>
               </div>
             </Link>

@@ -10,9 +10,10 @@ const CodingSection = () => {
 
   useEffect(() => {
     async function callAPI() {
-      const res = await supabase.from("Projects").select("id,Hero_image,slug,title,category,video").eq("section_type","coding");
+      const res = await supabase.from("Projects").select("id,Hero_image,slug,Title,section_type").eq("section_type","coding");
       
       setProjects(res.data);
+      console.log(res.data)
       setLoading(false);
     }
     
@@ -52,7 +53,7 @@ const CodingSection = () => {
                 <img
                   key={project.id}
                   src={project.Hero_image}
-                  alt={project.title}
+                  alt={project.slug}
                   className={activeWork === project.id ? "visible" : ""}
                   data-work={project.id}
                 />
@@ -69,8 +70,8 @@ const CodingSection = () => {
                   data-work={project.id}
                   onMouseEnter={() => handleWorkHover(project.id)}
                 >
-                  <span className="work-title">{project.title}</span>
-                  <span className="work-category">{project.category}</span>
+                  <span className="work-title">{project.Title}</span>
+                  <span className="work-category">{project.section_type}</span>
                 </div>
               </Link>
             ))}
