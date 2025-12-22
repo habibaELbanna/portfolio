@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Graphicdesign.css';
-import { graphicProjects } from '../data/graphicProjectsData';
+
 
 const Graphicdesign = () => {
   const scrollContainerRef = useRef(null);

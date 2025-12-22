@@ -2,20 +2,9 @@ import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import './Casestudy.css';
-import { webDevProjects } from '../data/webDevProjectsData';
 
-// Keep your existing imports for images/videos
-import doit from '../Assets/imgs/casestudy/logodoit.svg'
-import vortex from '../Assets/imgs/casestudy/vortexlogo.svg'
-import cosmo from '../Assets/imgs/casestudy/cosmo.png'
-import giza from '../Assets/vid/gizazoo.mp4'
-import real from '../Assets/imgs/casestudy/realestate.png'
-import phone from '../Assets/imgs/casestudy/phone.png'
-import perfume from '../Assets/imgs/casestudy/perfume.png'
-import bio from '../Assets/imgs/casestudy/BIO.png'
-import sofra from '../Assets/imgs/casestudy/sofra.png'
-import kemet from '../Assets/imgs/casestudy/kemet.png'
-import pink from '../Assets/imgs/casestudy/pinnk.png'
+
+
 import { supabase } from '../Supabase';
 
 const Casestudy = () => {

@@ -1,22 +1,37 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import './GraphicProjectDetail.css';
 import Navbar from '../Component/Navbar';
 import Footer from '../Component/Footer';
 import FloatingButton from '../Component/Floatingbutton';
-import { graphicProjects } from '../data/graphicProjectsData';
+import { supabase } from '../Supabase';
 
 const GraphicProjectDetail = () => {
   const { projectId } = useParams();
-  const project = graphicProjects[projectId];
-  console.log("projectId from URL:", projectId);
-  console.log("project data:", project);
-  console.log("all projects:", graphicProjects)
+  const [loading, setLoading] = useState(true);
+  const [project, setProject] = useState(null);
+  
   const scrollContainerRef = useRef(null);
   const wrapperRef = useRef(null);
 
   useEffect(() => {
-    if (project && project.layoutType === 'horizontal') {
+    async function callAPI() {
+      const res = await supabase
+        .from("Projects")
+        .select("id,title,description,images,layout_type")
+        .eq("slug", projectId)
+        .eq("section_type", "graphic")
+        .single();
+      
+      setProject(res.data);
+      setLoading(false);
+    }
+    
+    callAPI();
+  }, [projectId]);
+
+  useEffect(() => {
+    if (project && project.layout_type === 'horizontal') {
       const scrollContainer = scrollContainerRef.current;
       const scrollWrapper = wrapperRef.current;
 
@@ -55,11 +70,13 @@ const GraphicProjectDetail = () => {
     }
   }, [project]);
 
+  if (loading) return <p>Loading...</p>;
+
   if (!project) {
     return <Navigate to="/" replace />;
   }
 
-  if (project.layoutType === 'horizontal') {
+  if (project.layout_type === 'horizontal') {
     return (
       <>
         <Navbar />

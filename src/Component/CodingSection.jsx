@@ -1,50 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./CodingSection.css";
-import giza from "../Assets/vid/gizazoo.mp4";
-import harry from "../Assets/vid/harry.mp4";
-import jewels from "../Assets/imgs/coding/jewels.png";
-import kemet from "../Assets/imgs/casestudy/kemet.png";
-import aw from "../Assets/imgs/coding/awearness.png";
-import re from "../Assets/imgs/coding/repair.png";
+import { supabase } from '../Supabase';
 
 const CodingSection = () => {
+  const [loading, setLoading] = useState(true);
   const [activeWork, setActiveWork] = useState(0);
+  const [projects, setProjects] = useState([]);
 
-  const projects = [
-    {
-      id: 0,
-      title: "Giza Zoo",
-      category: "ux/ui/ development",
-      video: giza,
-      link: "/project/giza-zoo",
-    },
-    {
-      id: 1,
-      title: "harry potter inspired story website",
-      category: "ux/ui/ development",
-      video: harry,
-      link: "/project/harrypotter",
-    },
-    {
-      id: 2,
-      title: "Glamour jewerly store",
-      category: "ux/ui/ development",
-      image: jewels,
-      link: "/project/glamour",
-    },
-    {
-      id: 4,
-      title: "Awareness",
-      category: "ux/ui/ development",
-      image: aw,
-      link: "/project/Awareness",
-    },
-  ];
+  useEffect(() => {
+    async function callAPI() {
+      const res = await supabase.from("Projects").select("id,Hero_image,slug,title,category,video").eq("section_type","coding");
+      
+      setProjects(res.data);
+      setLoading(false);
+    }
+    
+    callAPI();
+  }, []);
 
   const handleWorkHover = (workId) => {
     setActiveWork(workId);
   };
+
+  if (loading) return <p>Loading...</p>;
 
   return (
     <>
@@ -72,7 +51,7 @@ const CodingSection = () => {
               ) : (
                 <img
                   key={project.id}
-                  src={project.image}
+                  src={project.Hero_image}
                   alt={project.title}
                   className={activeWork === project.id ? "visible" : ""}
                   data-work={project.id}
@@ -83,31 +62,18 @@ const CodingSection = () => {
 
           <div className="works-listing">
             <h1 className="proj">PROJECTS</h1>
-            {projects.map((project) =>
-              project.link === "#" ? (
-                <a href={project.link} key={project.id}>
-                  <div
-                    className="work-entry"
-                    data-work={project.id}
-                    onMouseEnter={() => handleWorkHover(project.id)}
-                  >
-                    <span className="work-title">{project.title}</span>
-                    <span className="work-category">{project.category}</span>
-                  </div>
-                </a>
-              ) : (
-                <Link to={project.link} key={project.id}>
-                  <div
-                    className="work-entry"
-                    data-work={project.id}
-                    onMouseEnter={() => handleWorkHover(project.id)}
-                  >
-                    <span className="work-title">{project.title}</span>
-                    <span className="work-category">{project.category}</span>
-                  </div>
-                </Link>
-              )
-            )}
+            {projects.map((project) => (
+              <Link to={project.slug} key={project.id}>
+                <div
+                  className="work-entry"
+                  data-work={project.id}
+                  onMouseEnter={() => handleWorkHover(project.id)}
+                >
+                  <span className="work-title">{project.title}</span>
+                  <span className="work-category">{project.category}</span>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </div>
