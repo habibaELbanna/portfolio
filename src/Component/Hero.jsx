@@ -1,11 +1,50 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './Hero.css';
-import me from '../Assets/imgs/me.png';
-import ankh from  '../Assets/imgs/ankh.svg'
+import ankh from '../Assets/imgs/ankh.svg';
+import { supabase } from '../Supabase';
+
 const Hero = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [aboutData, setAboutData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  
   const title = "HABIBA ELBANNA";
+
+  useEffect(() => {
+    async function fetchAboutData() {
+      try {
+        console.log('🔍 Fetching About data...');
+        
+        const { data, error } = await supabase
+          .from('About')
+          .select('*')
+          .eq('id', 1)
+          .single();
+
+        console.log('📦 Supabase response:', { data, error });
+
+        if (error) throw error;
+        
+        if (data) {
+          console.log('✅ About data:', data);
+          setAboutData(data);
+        } else {
+          console.log('⚠️ No data found in About table');
+        }
+      } catch (error) {
+        console.error('❌ Error fetching about data:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchAboutData();
+  }, []);
+
+  if (loading) {
+    return <div className="portfolio-hero-section">Loading...</div>;
+  }
   
   return (
     <main className="portfolio-hero-section">
@@ -34,97 +73,81 @@ const Hero = () => {
       <div className="portfolio-hero-content">
         <div className="portfolio-text-content">
           <p className="portfolio-description-text">
-            I Design Cool Stuff That Looks Good And Actually Works. From UX/UI To Branding, Web Design, And A Sprinkle Of Code, I Love Turning Ideas Into Fun, Scroll-Worthy Experiences.
+            {aboutData?.discribtion1 || 'I Design Cool Stuff That Looks Good And Actually Works. From UX/UI To Branding, Web Design, And A Sprinkle Of Code, I Love Turning Ideas Into Fun, Scroll-Worthy Experiences.'}
           </p>
           
           <a href="#about" className="portfolio-cta-button">MORE ABOUT ME</a>
         </div>
 
         <div className="portfolio-image-wrapper">
-          <img src={me} alt="Habiba Elbanna" className="portfolio-hero-image" />
+          {aboutData?.myimage && (
+            <img 
+              src={aboutData.myimage} 
+              alt="Habiba Elbanna" 
+              className="portfolio-hero-image" 
+            />
+          )}
         </div>
       </div>
       
-
-
-      
-<div class="banner-container">
-        <div class="banner-track">
-          
-            <div className="banner-content">
-                <div className="banner-item">
-                    <span className="banner-text">GRAPHIC DESIGN</span>
-                    <span className="ankh">
+      <div className="banner-container">
+        <div className="banner-track">
+          <div className="banner-content">
+            <div className="banner-item">
+              <span className="banner-text">GRAPHIC DESIGN</span>
+              <span className="ankh">
                 <img src={ankh} alt="" />
-                    </span>
-                </div>
-                <div className="banner-item">
-                    <span className="banner-text">BRANDING</span>
-                    <span className="ankh">
-                          <img src={ankh} alt="" />
-                    </span>
-                </div>
-                <div className="banner-item">
-                    <span className="banner-text">UX/UI</span>
-                    <span className="ankh">
-                        <img src={ankh} alt="" />
-                    </span>
-                </div>
-                <div className="banner-item">
-                    <span className="banner-text">CODING</span>
-                    <span className="ankh">
-                       <img src={ankh} alt="" />
-                    </span>
-                </div>
+              </span>
             </div>
-            
-        
-            <div className="banner-content">
-                <div className="banner-item">
-                    <span className="banner-text">GRAPHIC DESIGN</span>
-                    <span className="ankh">
-                      <img src={ankh} alt="" />
-                    </span>
-                </div>
-                <div className="banner-item">
-                    <span className="banner-text">BRANDING</span>
-                    <span className="ankh">
-                       <img src={ankh} alt="" />
-                    </span>
-                </div>
-                <div className="banner-item">
-                    <span className="banner-text">UX/UI</span>
-                    <span className="ankh">
-                      <img src={ankh} alt="" />
-                    </span>
-                </div>
-                <div className="banner-item">
-                    <span className="banner-text">CODING</span>
-                    <span className="ankh">
-                      <img src={ankh} alt="" />
-                    </span>
-                </div>
+            <div className="banner-item">
+              <span className="banner-text">BRANDING</span>
+              <span className="ankh">
+                <img src={ankh} alt="" />
+              </span>
             </div>
+            <div className="banner-item">
+              <span className="banner-text">UX/UI</span>
+              <span className="ankh">
+                <img src={ankh} alt="" />
+              </span>
+            </div>
+            <div className="banner-item">
+              <span className="banner-text">CODING</span>
+              <span className="ankh">
+                <img src={ankh} alt="" />
+              </span>
+            </div>
+          </div>
+          
+          <div className="banner-content">
+            <div className="banner-item">
+              <span className="banner-text">GRAPHIC DESIGN</span>
+              <span className="ankh">
+                <img src={ankh} alt="" />
+              </span>
+            </div>
+            <div className="banner-item">
+              <span className="banner-text">BRANDING</span>
+              <span className="ankh">
+                <img src={ankh} alt="" />
+              </span>
+            </div>
+            <div className="banner-item">
+              <span className="banner-text">UX/UI</span>
+              <span className="ankh">
+                <img src={ankh} alt="" />
+              </span>
+            </div>
+            <div className="banner-item">
+              <span className="banner-text">CODING</span>
+              <span className="ankh">
+                <img src={ankh} alt="" />
+              </span>
+            </div>
+          </div>
         </div>
-    </div>
-
-
-
-
-
-
-
-
-
-      
+      </div>
     </main>
-
-
-
-
-
-
-
   );
 };
 
