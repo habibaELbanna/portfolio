@@ -2,9 +2,6 @@ import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import './Casestudy.css';
-
-
-
 import { supabase } from '../Supabase';
 
 const Casestudy = () => {
@@ -56,17 +53,14 @@ const Casestudy = () => {
   };
 
   useEffect(() => {
+    async function callAPI(params) {
+      const res = await supabase.from("Projects").select("id,Hero_image,slug").eq("section_type","webapp");
+      
+      setProjects(res.data);
+      setLoading(false);
+    }
 
-async function callAPI(params) {
-  const res = await supabase.from("Projects").select("id,Hero_image,slug").eq("section_type","webapp");
-  
-  setProjects(res.data);
-  setLoading(false);
-}
-
-callAPI();
-
-
+    callAPI();
 
     const container = containerRef.current;
     const overlay = overlayRef.current;
@@ -144,7 +138,9 @@ callAPI();
     ];
     return cardClasses[index] || `card-${index + 1}`;
   };
-if (loading) return <p>Loading...</p>;
+
+  if (loading) return <p>Loading...</p>;
+  
   return (
     <div ref={containerRef} className="bento-container">
       <div ref={overlayRef} className="bento-overlay"></div>
@@ -166,7 +162,7 @@ if (loading) return <p>Loading...</p>;
             onMouseEnter={() => handleWorkHover(project.id)}
             ref={addToRefs}
           >
-            <Link to={project.slug} style={{ textDecoration: 'none', display: 'block', width: '100%', height: '100%' }}>
+            <Link to={`/webapp-project/${project.slug}`} style={{ textDecoration: 'none', display: 'block', width: '100%', height: '100%' }}>
               <div className="card-image-full">
                 {project.video ? (
                   <video

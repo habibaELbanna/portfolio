@@ -64,7 +64,7 @@ const CodingSection = () => {
           <div className="works-listing">
             <h1 className="proj">PROJECTS</h1>
             {projects.map((project) => (
-              <Link to={project.slug} key={project.id}>
+              <Link to={`/webapp-project/${project.slug}`} key={project.id}>
                 <div
                   className="work-entry"
                   data-work={project.id}

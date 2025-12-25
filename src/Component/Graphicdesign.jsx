@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Graphicdesign.css';
 import { supabase } from '../Supabase';
-
+console.log("🚨 GRAPHICDESIGN COMPONENT LOADED");
 const Graphicdesign = () => {
   const [loading, setLoading] = useState(true);
   const [projects, setProjects] = useState([]);
@@ -15,7 +15,7 @@ const Graphicdesign = () => {
         .from("Projects")
         .select("id,Title,section_type,Hero_image,slug")
         .eq("section_type", "graphic");
-      // console.log(res)
+      
       setProjects(res.data);
       setLoading(false);
     }
@@ -74,7 +74,7 @@ const Graphicdesign = () => {
           {projects.map((project) => (
             <Link 
               key={project.id} 
-              to={project.slug}
+              to={`/graphic-project/${project.slug}`}
               style={{ textDecoration: 'none' }}
             >
               <div className="proof-card image-card">

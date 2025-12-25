@@ -16,14 +16,78 @@ const GraphicProjectDetail = () => {
 
   useEffect(() => {
     async function callAPI() {
+      console.log('🔍 Looking for project with slug:', projectId);
+      
       const res = await supabase
         .from("Projects")
-        .select("id,title,description,images,layout_type")
+        .select("*")
         .eq("slug", projectId)
         .eq("section_type", "graphic")
         .single();
       
-      setProject(res.data);
+      console.log('📦 Supabase response:', res);
+      console.log('✅ Data:', res.data);
+      console.log('❌ Error:', res.error);
+      
+      if (res.data) {
+        const rawProject = res.data;
+        
+        let allImages = [];
+        
+        // Get images from the_ux
+        if (rawProject.the_ux && rawProject.the_ux.project_image) {
+          if (Array.isArray(rawProject.the_ux.project_image)) {
+            allImages = [...allImages, ...rawProject.the_ux.project_image];
+          } else {
+            allImages.push(rawProject.the_ux.project_image);
+          }
+        }
+        
+        // Get images from the_branding
+        if (rawProject.the_branding && rawProject.the_branding.project_image) {
+          allImages.push(rawProject.the_branding.project_image);
+        }
+        
+        // Get images from Products
+        if (rawProject.Products) {
+          const productImages = Object.keys(rawProject.Products)
+            .filter(key => key.startsWith('image'))
+            .map(key => rawProject.Products[key])
+            .filter(url => url);
+          allImages = [...allImages, ...productImages];
+        }
+        
+        // Get images from scroll_imgs
+        if (rawProject.scroll_imgs) {
+          const scrollImages = Object.keys(rawProject.scroll_imgs)
+            .filter(key => key.startsWith('image'))
+            .map(key => rawProject.scroll_imgs[key])
+            .filter(url => url);
+          allImages = [...allImages, ...scrollImages];
+        }
+        
+        // If no images found in JSONB columns, use Hero_image
+        if (allImages.length === 0 && rawProject.Hero_image) {
+          allImages.push(rawProject.Hero_image);
+        }
+        
+        console.log('🖼️ All collected images:', allImages);
+        
+        const transformedProject = {
+          title: rawProject.Title,
+          description: rawProject.project_description 
+            ? [rawProject.project_description] 
+            : [],
+          images: allImages,
+          layout_type: 'vertical'
+        };
+        
+        console.log('✨ Transformed project:', transformedProject);
+        setProject(transformedProject);
+      } else {
+        console.log('⚠️ No project found! Redirecting to home...');
+      }
+      
       setLoading(false);
     }
     

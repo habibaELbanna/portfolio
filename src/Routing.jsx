@@ -20,7 +20,7 @@ const Routing = () => {
      
           <Route path="/graphic-project/:projectId" element={<GraphicProjectDetail />} />
    
-          <Route path="/project/:caseStudyId" element={<CaseStudyDetail />} />
+     <Route path="/project/:caseStudyId" element={<CaseStudyDetail />} />
         </Routes>
       </BrowserRouter>
     </>
